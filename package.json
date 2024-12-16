@@ -1,0 +1,44 @@
+{
+  "name": "dart-tools-ts",
+  "version": "1.0.0",
+  "description": "The Dart TypeScript client.",
+  "author": "Dart Software Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "type": "module",
+  "main": "dist/dart-tools.umd.js",
+  "module": "dist/dart-tools.cjs",
+  "types": "dist/dart-tools.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/dart-tools.cjs",
+      "require": "./dist/dart-tools.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "make-api": "./admin/make-api.sh",
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/its-dart/dart-tools-ts.git"
+  },
+  "keywords": [
+    "dart",
+    "projectmanagement",
+    "taskmanagement"
+  ],
+  "bugs": {
+    "url": "https://github.com/its-dart/dart-tools-ts/issues"
+  },
+  "homepage": "https://github.com/its-dart/dart-tools-ts",
+  "devDependencies": {
+    "np": "^10.1.0",
+    "openapi-typescript-codegen": "^0.29.0"
+  }
+}
