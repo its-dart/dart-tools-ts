@@ -30,8 +30,7 @@
     "build:mjs": "tsc --project tsconfig.mjs.json && cp package.mjs.json dist/mjs/package.json",
     "build": "npm run build:cjs && npm run build:mjs",
     "make-api": "./admin/make-api.sh",
-    "make-deploy": "npm run build && ./admin/make-deploy.sh",
-    "release-it": "release-it",
+    "release": "release-it",
     "test": "echo \"No test specified\""
   },
   "dependencies": {
