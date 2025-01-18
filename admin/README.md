@@ -1,25 +1,26 @@
 # Admin functionality
 
+
 - [Admin functionality](#admin-functionality)
   - [Local setup](#local-setup)
   - [Sync API](#sync-api)
-  - [Build](#build)
   - [Deploy](#deploy)
+
 
 ## Local setup
 
-1. Install with `yarn install`
+1. Run `yarn install` to install the dependencies
+2. Run `yarn build` to build the library
+3. Run `node -r playground.js` and start using `dart` in the REPL
+
 
 ## Sync API
 
 1. Run `yarn make-api`
 
-## Build
-
-1. Run `yarn build`
 
 ## Deploy
 
 1. Commit and push all local changes to GitHub
-2. Run `yarn release` and follow the prompts, confirming each step by pressing enter
-3. If you are not already logged in to NPM, you will be prompted to run `npm login`
+2. Run `npm login` if needed
+3. Run `yarn release` and follow the prompts, confirming each step by pressing enter
