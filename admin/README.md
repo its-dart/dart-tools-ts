@@ -23,4 +23,4 @@
 
 1. Commit and push all local changes to GitHub
 2. Run `npm login` if needed
-3. Run `yarn release` and follow the prompts, confirming each step by pressing enter
+3. Run `yarn release` and follow the prompts (usually they are all a yes), confirming each step by pressing enter
