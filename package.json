@@ -1,7 +1,7 @@
 {
   "name": "dart-tools-ts",
   "version": "0.1.3",
-  "description": "The Dart TypeScript client.",
+  "description": "The Dart TypeScript/JavaScript client",
   "license": "MIT",
   "author": "Dart Software Team",
   "engines": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/its-dart/dart-tools-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/its-dart/dart-tools-ts/issues"
+    "url": "https://app.itsdart.com/p/r/JFyPnhL9En61"
   },
   "exports": {
     "import": "./dist/mjs/index.js",
@@ -28,13 +28,13 @@
   "scripts": {
     "build:cjs": "tsc --project tsconfig.cjs.json && cp package.cjs.json dist/cjs/package.json",
     "build:mjs": "tsc --project tsconfig.mjs.json && cp package.mjs.json dist/mjs/package.json",
-    "build": "npm run build:cjs && npm run build:mjs",
+    "build": "yarn run build:cjs && yarn run build:mjs",
     "make-api": "./admin/make-api.sh",
     "release": "release-it",
-    "test": "echo \"No test specified\""
+    "test": "echo \"dart-tools-ts doesn't have tests yet\""
   },
   "dependencies": {
-    "axios": "^1.7.9"
+    "axios": "~1.7"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
