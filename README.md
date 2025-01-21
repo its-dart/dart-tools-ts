@@ -13,6 +13,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Authentication of the Dart Client](#authentication-of-the-dart-client)
   - [Importing](#importing)
   - [Example](#example)
 - [Help and Resources](#help-and-resources)
@@ -31,14 +32,20 @@ npm i dart-tools-ts
 ## Usage
 
 
+### Authentication of the Dart Client
+
+Visit [your Dart profile](https://app.itsdart.com/?settings=account) and save the authentication token into the `DART_TOKEN` environment variable.
+
 ### Importing
 
 To use this package in a CommonJS (CJS) script, you can require the module with
-```ts
+
+```js
 const dart = require("dart-tools-ts");
 ```
 
-To use this package in an ECMAScript Module (MJS) script, you can import the with
+To use this package in an ECMAScript Module (MJS) script, you can import the module with
+
 ```ts
 import * as dart from "dart-tools-ts";
 ```
@@ -46,10 +53,8 @@ import * as dart from "dart-tools-ts";
 ### Example
 
 ```ts
-// TODO this needs auth
 // Get all tasks assigned to someone with a name or email like Peter
 import { type PaginatedTaskList, TasksService } from "dart-tools-ts";
-// TODO test
 const tasks: PaginatedTaskList = await TasksService.tasksList("Peter");
 
 // Set up some utilities
@@ -66,23 +71,23 @@ const clientDuid = makeDuid();
 
 // Create a new task called 'Update the landing page' with priority 'Critical' (i.e. p0)
 import { OperationModelKind, OperationKind, Priority, type TaskCreate, TransactionKind, TransactionsService } from "dart-tools-ts";
-// TODO test do we need xCsrftoken arg as well? does the taskCreate have any other secretly required fields?
+
 const taskCreate: TaskCreate = {
   duid: makeDuid(),
-    title: "Update the landing page",
-    priority: Priority.CRITICAL,
+  title: "Update the landing page",
+  priority: Priority.CRITICAL,
 };
 await TransactionsService.transactionsCreate({
-    items: [{
-        duid: makeDuid(),
-        kind: TransactionKind.TASK_CREATE,
-        operations: [{
-            kind: OperationKind.CREATE,
-            model: OperationModelKind.TASK,
-            data: taskCreate,
-        }],
+  items: [{
+    duid: makeDuid(),
+    kind: TransactionKind.TASK_CREATE,
+    operations: [{
+      kind: OperationKind.CREATE,
+      model: OperationModelKind.TASK,
+      data: taskCreate,
     }],
-    clientDuid,
+  }],
+  clientDuid,
 });
 ```
 

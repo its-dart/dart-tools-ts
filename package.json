@@ -31,14 +31,18 @@
     "build": "yarn run build:cjs && yarn run build:mjs",
     "make-api": "./admin/make-api.sh",
     "release": "release-it",
+    "start:playground:cjs": "node --env-file=.env -r ./admin/playground.cjs",
+    "start:playground:mts": "node --env-file=.env --experimental-specifier-resolution=node --no-warnings --loader ts-node/esm ./admin/playground.mts",
     "test": "echo \"dart-tools-ts doesn't have tests yet\""
   },
   "dependencies": {
-    "axios": "~1.7"
+    "axios": "~1.7",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
     "@types/uuid": "^10.0.0",
+    "dotenv": "^16.4.7",
     "openapi-typescript-codegen": "^0.29.0",
     "release-it": "^17.11.0",
     "typescript": "^5.7.2",

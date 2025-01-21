@@ -11,7 +11,9 @@
 
 1. Run `yarn install` to install the dependencies
 2. Run `yarn build` to build the library
-3. Run `node -r playground.js` and start using `dart` in the REPL
+3. Run `cp -n .env.example .env` to copy the example environment file and then fill out all needed variables
+4. Run `yarn start:playground:cjs` and start using `dart` in the REPL
+5. Use `yarn start:playground:mts` command to run the TypeScript snippet located in the `admin/playground.mts` file
 
 
 ## Sync API
