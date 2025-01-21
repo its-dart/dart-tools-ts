@@ -1,20 +1,26 @@
 {
-  "include": ["./dart/generated/**/*.ts"],
-  "exclude": ["./vite.config.ts"],
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["ESNext"],
-    "allowJs": true,
-    "declaration": true,
-    "skipLibCheck": false,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "paths": {
+      "dart-tools-ts": ["./dist/mjs/index.d.ts"]
+    },
+    "resolveJsonModule": true,
     "rootDir": "./dart/generated",
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "target": "esnext"
+  },
+  "exclude": ["node_modules", "./vite.config.ts"],
+  "include": ["./dart/generated/**/*.ts"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "esnext"
+    }
   }
 }

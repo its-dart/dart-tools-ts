@@ -30,3 +30,6 @@ export const OpenAPI: OpenAPIConfig = {
   HEADERS: undefined,
   ENCODE_PATH: undefined,
 };
+
+OpenAPI.BASE = process.env.DART_API_BASE_URL || 'https://app.itsdart.com';
+OpenAPI.HEADERS = { Authorization: `Bearer ${process.env.DART_TOKEN}` };

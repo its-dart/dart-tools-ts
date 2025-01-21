@@ -20,9 +20,9 @@ export type User = {
   taskDetailMode: TaskDetailMode;
   sections: any;
   layout: any;
+  authToken: string | null;
   imageUrl: string | null;
   isAdmin: boolean;
-  authToken: string | null;
   googleData: (GoogleData | null);
 };
 
