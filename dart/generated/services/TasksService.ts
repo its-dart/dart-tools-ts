@@ -14,6 +14,7 @@ export class TasksService {
    * @param dartboardDuid
    * @param description
    * @param dueAt
+   * @param duids Filter by DUIDs
    * @param inTrash
    * @param isDraft
    * @param kind
@@ -38,6 +39,7 @@ export class TasksService {
     dartboardDuid?: string,
     description?: string,
     dueAt?: string,
+    duids?: string,
     inTrash?: boolean,
     isDraft?: boolean,
     kind?: string,
@@ -63,6 +65,7 @@ export class TasksService {
         'dartboard_duid': dartboardDuid,
         'description': description,
         'due_at': dueAt,
+        'duids': duids,
         'in_trash': inTrash,
         'is_draft': isDraft,
         'kind': kind,

@@ -21,6 +21,7 @@ export type Tenant = {
   backlogEnabled: boolean;
   aiAssignmentEnabled: boolean;
   emailIntegrationEnabled: boolean;
+  scimEnabled: boolean;
   closeParentOnCloseAllSubtasks: boolean;
   moveSubtasksOnMoveParent: boolean;
   updateSubtasksStatusOnUpdateParentStatus: boolean;

@@ -8,6 +8,7 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class TaskKindsService {
   /**
+   * @param duids Filter by DUIDs
    * @param kind
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
@@ -16,6 +17,7 @@ export class TaskKindsService {
    * @throws ApiError
    */
   public static taskKindsList(
+    duids?: string,
     kind?: 'Default' | 'Milestone',
     limit?: number,
     offset?: number,
@@ -25,6 +27,7 @@ export class TaskKindsService {
       method: 'GET',
       url: '/api/v0/task-kinds',
       query: {
+        'duids': duids,
         'kind': kind,
         'limit': limit,
         'offset': offset,

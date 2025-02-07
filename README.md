@@ -77,7 +77,7 @@ const taskCreate: TaskCreate = {
   title: "Update the landing page",
   priority: Priority.CRITICAL,
 };
-await TransactionsService.transactionsCreate({
+const createResult = await TransactionsService.transactionsCreate({
   items: [{
     duid: makeDuid(),
     kind: TransactionKind.TASK_CREATE,

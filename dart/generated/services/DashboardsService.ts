@@ -8,6 +8,7 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class DashboardsService {
   /**
+   * @param duids Filter by DUIDs
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
    * @param title
@@ -15,6 +16,7 @@ export class DashboardsService {
    * @throws ApiError
    */
   public static dashboardsList(
+    duids?: string,
     limit?: number,
     offset?: number,
     title?: string,
@@ -23,6 +25,7 @@ export class DashboardsService {
       method: 'GET',
       url: '/api/v0/dashboards',
       query: {
+        'duids': duids,
         'limit': limit,
         'offset': offset,
         'title': title,

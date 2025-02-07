@@ -8,7 +8,6 @@ import type { SprintMode } from './SprintMode';
 export type Space = {
   duid: string;
   updatedByClientDuid?: string | null;
-  drafterDuid: string | null;
   kind: SpaceKind;
   accessibleByTeam: boolean;
   accessibleByUserDuids: Array<string>;

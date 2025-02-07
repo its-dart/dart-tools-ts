@@ -8,6 +8,7 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class DartboardsService {
   /**
+   * @param duids Filter by DUIDs
    * @param finishedAt
    * @param kind
    * @param limit Number of results to return per page.
@@ -20,6 +21,7 @@ export class DartboardsService {
    * @throws ApiError
    */
   public static dartboardsList(
+    duids?: string,
     finishedAt?: string,
     kind?: 'Active' | 'Backlog' | 'Custom' | 'Finished' | 'Next',
     limit?: number,
@@ -33,6 +35,7 @@ export class DartboardsService {
       method: 'GET',
       url: '/api/v0/dartboards',
       query: {
+        'duids': duids,
         'finished_at': finishedAt,
         'kind': kind,
         'limit': limit,

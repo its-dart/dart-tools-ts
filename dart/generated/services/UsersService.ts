@@ -8,6 +8,7 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class UsersService {
   /**
+   * @param duids Filter by DUIDs
    * @param email
    * @param limit Number of results to return per page.
    * @param name
@@ -17,6 +18,7 @@ export class UsersService {
    * @throws ApiError
    */
   public static usersList(
+    duids?: string,
     email?: string,
     limit?: number,
     name?: string,
@@ -27,6 +29,7 @@ export class UsersService {
       method: 'GET',
       url: '/api/v0/users',
       query: {
+        'duids': duids,
         'email': email,
         'limit': limit,
         'name': name,

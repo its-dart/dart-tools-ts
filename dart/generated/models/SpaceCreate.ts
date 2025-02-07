@@ -6,7 +6,6 @@ import type { IconKind } from './IconKind';
 import type { SprintMode } from './SprintMode';
 export type SpaceCreate = {
   duid: string;
-  drafterDuid?: string | null;
   accessibleByTeam?: boolean;
   accessibleByUserDuids?: Array<string>;
   order: string;

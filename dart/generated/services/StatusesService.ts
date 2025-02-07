@@ -9,6 +9,7 @@ import { request as __request } from '../core/request';
 export class StatusesService {
   /**
    * @param defaultOnly
+   * @param duids Filter by DUIDs
    * @param kind
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
@@ -20,6 +21,7 @@ export class StatusesService {
    */
   public static statusesList(
     defaultOnly?: boolean,
+    duids?: string,
     kind?: 'Blocked' | 'Canceled' | 'Finished' | 'Started' | 'Unstarted',
     limit?: number,
     offset?: number,
@@ -32,6 +34,7 @@ export class StatusesService {
       url: '/api/v0/statuses',
       query: {
         'default_only': defaultOnly,
+        'duids': duids,
         'kind': kind,
         'limit': limit,
         'offset': offset,

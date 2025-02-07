@@ -8,6 +8,7 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class DocsService {
   /**
+   * @param duids Filter by DUIDs
    * @param editor
    * @param editorDuid
    * @param folder
@@ -17,6 +18,10 @@ export class DocsService {
    * @param limit Number of results to return per page.
    * @param o Ordering
    *
+   * * `order` - Order
+   * * `-order` - Order (descending)
+   * * `created` - Created at
+   * * `-created` - Created at (descending)
    * * `recent` - Recent
    * * `-recent` - Recent (descending)
    * * `title` - Title
@@ -32,6 +37,7 @@ export class DocsService {
    * @throws ApiError
    */
   public static docsList(
+    duids?: string,
     editor?: string,
     editorDuid?: string,
     folder?: string,
@@ -39,7 +45,7 @@ export class DocsService {
     inTrash?: boolean,
     isDraft?: boolean,
     limit?: number,
-    o?: Array<'-recent' | '-title' | 'recent' | 'title'>,
+    o?: Array<'-created' | '-order' | '-recent' | '-title' | 'created' | 'order' | 'recent' | 'title'>,
     offset?: number,
     reportKind?: string,
     s?: string,
@@ -52,6 +58,7 @@ export class DocsService {
       method: 'GET',
       url: '/api/v0/docs',
       query: {
+        'duids': duids,
         'editor': editor,
         'editor_duid': editorDuid,
         'folder': folder,

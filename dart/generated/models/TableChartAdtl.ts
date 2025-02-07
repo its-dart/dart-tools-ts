@@ -6,7 +6,7 @@ import type { ChartAggregation } from './ChartAggregation';
 export type TableChartAdtl = {
   columnPropertyDuid: string;
   rowPropertyDuid: string | null;
-  aggregation: ChartAggregation;
   aggregationPropertyDuid: string | null;
+  aggregation: ChartAggregation;
 };
 

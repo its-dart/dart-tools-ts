@@ -9,6 +9,7 @@ import { request as __request } from '../core/request';
 export class OptionsService {
   /**
    * @param defaultOnly
+   * @param duids Filter by DUIDs
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
    * @param property
@@ -19,6 +20,7 @@ export class OptionsService {
    */
   public static optionsList(
     defaultOnly?: boolean,
+    duids?: string,
     limit?: number,
     offset?: number,
     property?: string,
@@ -30,6 +32,7 @@ export class OptionsService {
       url: '/api/v0/options',
       query: {
         'default_only': defaultOnly,
+        'duids': duids,
         'limit': limit,
         'offset': offset,
         'property': property,

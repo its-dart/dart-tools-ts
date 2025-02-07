@@ -10,6 +10,7 @@ export class SpacesService {
   /**
    * @param abrev
    * @param description
+   * @param duids Filter by DUIDs
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
    * @param title
@@ -19,6 +20,7 @@ export class SpacesService {
   public static spacesList(
     abrev?: string,
     description?: string,
+    duids?: string,
     limit?: number,
     offset?: number,
     title?: string,
@@ -29,6 +31,7 @@ export class SpacesService {
       query: {
         'abrev': abrev,
         'description': description,
+        'duids': duids,
         'limit': limit,
         'offset': offset,
         'title': title,

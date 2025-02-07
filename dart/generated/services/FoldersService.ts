@@ -8,6 +8,7 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class FoldersService {
   /**
+   * @param duids Filter by DUIDs
    * @param kind
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
@@ -18,6 +19,7 @@ export class FoldersService {
    * @throws ApiError
    */
   public static foldersList(
+    duids?: string,
     kind?: 'Default' | 'Other' | 'Reports',
     limit?: number,
     offset?: number,
@@ -29,6 +31,7 @@ export class FoldersService {
       method: 'GET',
       url: '/api/v0/folders',
       query: {
+        'duids': duids,
         'kind': kind,
         'limit': limit,
         'offset': offset,

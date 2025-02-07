@@ -10,6 +10,7 @@ export class CommentsService {
   /**
    * @param author
    * @param authorDuid
+   * @param duids Filter by DUIDs
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
    * @param publishedAt
@@ -23,6 +24,7 @@ export class CommentsService {
   public static commentsList(
     author?: string,
     authorDuid?: string,
+    duids?: string,
     limit?: number,
     offset?: number,
     publishedAt?: string,
@@ -37,6 +39,7 @@ export class CommentsService {
       query: {
         'author': author,
         'author_duid': authorDuid,
+        'duids': duids,
         'limit': limit,
         'offset': offset,
         'published_at': publishedAt,
