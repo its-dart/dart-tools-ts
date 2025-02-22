@@ -5,6 +5,6 @@
 import type { Transaction } from './Transaction';
 export type RequestBody = {
   items: Array<Transaction>;
-  clientDuid: string;
+  clientDuid?: string;
 };
 

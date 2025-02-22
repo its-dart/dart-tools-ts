@@ -20,6 +20,7 @@ export type Dartboard = {
   index: number | null;
   startedAt: string | null;
   finishedAt: string | null;
+  plannedFinishAt: string | null;
   defaultPropertyMap: any;
   alwaysShownPropertyDuids: Array<string>;
   alwaysHiddenPropertyDuids: Array<string>;

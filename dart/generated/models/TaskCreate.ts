@@ -5,7 +5,7 @@
 import type { Priority } from './Priority';
 import type { TaskSourceType } from './TaskSourceType';
 export type TaskCreate = {
-  duid: string;
+  duid?: string;
   sourceType?: TaskSourceType;
   sourceTemplateViewDuid?: string | null;
   sourceTemplateTaskDuid?: string | null;
