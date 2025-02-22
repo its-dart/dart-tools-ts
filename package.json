@@ -1,6 +1,6 @@
 {
   "name": "dart-tools-ts",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "The Dart TypeScript/JavaScript client",
   "license": "MIT",
   "author": "Dart Software Team",
