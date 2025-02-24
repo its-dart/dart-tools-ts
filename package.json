@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "The Dart TypeScript/JavaScript client",
   "license": "MIT",
-  "author": "Dart Software Team",
+  "author": "Dart (software@itsdart.com)",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -12,9 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/its-dart/dart-tools-ts.git"
   },
-  "bugs": {
-    "url": "https://app.itsdart.com/p/r/JFyPnhL9En61"
-  },
+  "bugs": "https://app.itsdart.com/p/r/JFyPnhL9En61",
   "exports": {
     "import": "./dist/mjs/index.js",
     "require": "./dist/cjs/index.js"
