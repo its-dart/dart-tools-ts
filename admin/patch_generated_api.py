@@ -121,7 +121,10 @@ import subprocess
 import tempfile
 
 
-FILES_TO_PATCH: dict[str, list[str]] = {"services/TaskService.ts": ["listTasks"]}
+FILES_TO_PATCH: dict[str, list[str]] = {
+    "services/DocService.ts": ["listDocs"],
+    "services/TaskService.ts": ["listTasks"],
+}
 
 
 def make_function_selective_diff(diff: str, target_function_names: list[str]) -> str:

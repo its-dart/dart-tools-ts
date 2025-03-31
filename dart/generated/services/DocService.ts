@@ -98,34 +98,29 @@ export class DocService {
     });
   }
   /**
-   * @param duids Filter by DUIDs
-   * @param editor
-   * @param editorDuid
-   * @param folder
-   * @param folderDuid
-   * @param inTrash
-   * @param isDraft
-   * @param limit Number of results to return per page.
-   * @param o Ordering
-   *
-   * * `order` - Order
-   * * `-order` - Order (descending)
-   * * `created` - Created at
-   * * `-created` - Created at (descending)
-   * * `recent` - Recent
-   * * `-recent` - Recent (descending)
-   * * `title` - Title
-   * * `-title` - Title (descending)
-   * @param offset The initial index from which to return the results.
-   * @param reportKind
-   * @param s Search by title, text, or folder title
-   * @param subscriberDuid
-   * @param text
-   * @param title
    * @returns PaginatedConciseDocList
    * @throws ApiError
    */
-  public static listDocs(
+  public static listDocs({
+    duids,
+    editor,
+    editorDuid,
+    folder,
+    folderDuid,
+    inTrash,
+    isDraft,
+    limit,
+    o,
+    offset,
+    reportKind,
+    s,
+    subscriberDuid,
+    text,
+    title,
+  }: {
+    /**
+     * Filter by DUIDs
+     */
     duids?: string,
     editor?: string,
     editorDuid?: string,
@@ -133,15 +128,36 @@ export class DocService {
     folderDuid?: string,
     inTrash?: boolean,
     isDraft?: boolean,
+    /**
+     * Number of results to return per page.
+     */
     limit?: number,
+    /**
+     * Ordering
+     *
+     * * `order` - Order
+     * * `-order` - Order (descending)
+     * * `created` - Created at
+     * * `-created` - Created at (descending)
+     * * `recent` - Recent
+     * * `-recent` - Recent (descending)
+     * * `title` - Title
+     * * `-title` - Title (descending)
+     */
     o?: Array<'-created' | '-order' | '-recent' | '-title' | 'created' | 'order' | 'recent' | 'title'>,
+    /**
+     * The initial index from which to return the results.
+     */
     offset?: number,
     reportKind?: string,
+    /**
+     * Search by title, text, or folder title
+     */
     s?: string,
     subscriberDuid?: string,
     text?: string,
     title?: string,
-  ): CancelablePromise<PaginatedConciseDocList> {
+  }): CancelablePromise<PaginatedConciseDocList> {
     return __request(OpenAPI, {
       method: 'GET',
       url: '/docs/list',
