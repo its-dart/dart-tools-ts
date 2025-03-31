@@ -19,5 +19,10 @@ openapi --input $DART_API_SCHEMA_URL --output $GENERATED_WITH_OPTIONS_PATH --cli
 python3 ./admin/patch_generated_api.py "$GENERATED_PATH" "$GENERATED_WITH_OPTIONS_PATH"
 rm -rf "$GENERATED_WITH_OPTIONS_PATH"
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i "" "s|BASE: '.*',|BASE: 'https://app.itsdart.com/api/v0/public',|" ./dart/generated/core/OpenAPI.ts
+else
+    sed -i "s|BASE: '.*',|BASE: 'https://app.itsdart.com/api/v0/public',|" ./dart/generated/core/OpenAPI.ts
+fi
 printf '\nOpenAPI.BASE = process.env.DART_API_BASE_URL ?? OpenAPI.BASE;' >> ./dart/generated/core/OpenAPI.ts
 printf '\nOpenAPI.HEADERS = { Authorization: `Bearer ${process.env.DART_TOKEN}` };\n' >> ./dart/generated/core/OpenAPI.ts
