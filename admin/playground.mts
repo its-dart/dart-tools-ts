@@ -1,11 +1,17 @@
 // Get all tasks assigned to someone with a name or email like Peter
-import { type PaginatedTaskList, TasksService } from "dart-tools-ts";
-const tasks: PaginatedTaskList = await TasksService.tasksList("Peter");
+import {
+  TaskService,
+  PaginatedConciseTaskList,
+  WrappedTask,
+} from "dart-tools-ts";
+const tasks: PaginatedConciseTaskList = await TaskService.listTasks({
+  assignee: "Peter",
+});
 console.log("Peter's tasks:");
 if (tasks.results.length) {
   tasks.results.forEach((task) => {
     console.log(
-      `DUID: ${task.duid}, Priority: ${task.priority}, Title: ${task.title}`
+      `ID: ${task.id}, Priority: ${task.priority}, Title: ${task.title}`
     );
   });
 } else {
@@ -13,32 +19,13 @@ if (tasks.results.length) {
 }
 
 // Create a new task called 'Update the landing page' with priority 'Critical' (i.e. p0)
-import {
-  OperationModelKind,
-  OperationKind,
-  Priority,
-  type TaskCreate,
-  TransactionKind,
-  TransactionsService,
-} from "dart-tools-ts";
-
-const taskCreate: TaskCreate = {
-  title: "Update the landing page",
-  priority: Priority.CRITICAL,
-};
-const response = await TransactionsService.transactionsCreate({
-  items: [
-    {
-      kind: TransactionKind.TASK_CREATE,
-      operations: [
-        {
-          kind: OperationKind.CREATE,
-          model: OperationModelKind.TASK,
-          data: taskCreate,
-        },
-      ],
-    },
-  ],
+const task: WrappedTask = await TaskService.createTask({
+  item: {
+    title: "Update the landing page",
+    priority: "Critical",
+  },
 });
-console.log("Create task response:");
-console.log(response);
+console.log("Create task details:");
+console.log(
+  `ID: ${task.item.id}, Priority: ${task.item.priority}, Title: ${task.item.title}`
+);

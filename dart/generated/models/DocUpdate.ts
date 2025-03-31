@@ -2,27 +2,22 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { DocSourceType } from './DocSourceType';
-import type { IconKind } from './IconKind';
-import type { ReportKind } from './ReportKind';
 export type DocUpdate = {
-  duid: string;
-  sourceUser?: string | null;
-  sourceType?: DocSourceType;
-  drafterDuid?: string | null;
-  inTrash?: boolean;
-  folderDuid?: string;
-  reportKind?: (ReportKind | null);
-  order?: string;
+  /**
+   * The ID. This can and should be null on creation and not otherwise.
+   */
+  id: string;
+  /**
+   * The title, which is a short description of the document. This cannot be null.
+   */
   title?: string;
-  text?: any;
-  textMarkdown?: string;
-  editedByAi?: boolean;
-  recommendationDuid?: string | null;
-  editorDuids?: Array<string>;
-  subscriberDuids?: Array<string>;
-  iconKind?: IconKind;
-  iconNameOrEmoji?: string;
-  colorHex?: string;
+  /**
+   * The title of the folder, which is a project or list of docs. One common option is Docs, although what is possible depends on the workspace. If the folder is ambiguous it may need to include a prefix with the name of the space, which is a folder for folders.
+   */
+  folder?: string;
+  /**
+   * The full content of the doc, which can include markdown formatting. This cannot be null.
+   */
+  text?: string;
 };
 

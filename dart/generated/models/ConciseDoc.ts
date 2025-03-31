@@ -2,7 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type Doc = {
+/**
+ * This concise doc serializer is going to be used in docs listing view only.
+ */
+export type ConciseDoc = {
   /**
    * The ID. This can and should be null on creation and not otherwise.
    */
@@ -19,9 +22,5 @@ export type Doc = {
    * The title of the folder, which is a project or list of docs. One common option is Docs, although what is possible depends on the workspace. If the folder is ambiguous it may need to include a prefix with the name of the space, which is a folder for folders.
    */
   folder: string;
-  /**
-   * The full content of the doc, which can include markdown formatting. This cannot be null.
-   */
-  text: string;
 };
 

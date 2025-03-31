@@ -2,35 +2,38 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type TaskUpdate = {
+/**
+ * This concise task serializer is going to be used in tasks listing view only.
+ */
+export type ConciseTask = {
   /**
    * The ID. This can and should be null on creation and not otherwise.
    */
   id: string;
   /**
+   * The permanent link, which is a URL that can be used to open the task in Dart. This can and should be null on creation and not otherwise.
+   */
+  permalink: string;
+  /**
    * The title, which is a short description of what needs to be done. This cannot be null.
    */
-  title?: string;
+  title: string;
   /**
    * The ID of the parent task. This can be null.
    */
-  parentId?: string | null;
+  parentId: string | null;
   /**
    * The title of the dartboard, which is a project or list of tasks. Common options are Active, Next, and Backlog, although what is possible depends on the workspace. If the dartboard is ambiguous it may need to include a prefix with the name of the space, which is a folder for dartboards.
    */
-  dartboard?: string;
+  dartboard: string;
   /**
    * The title of the type of the task. This can be null on creation and not otherwise.
    */
-  type?: string;
+  type: string;
   /**
    * The status from the list of available statuses. Common options are To-do, Doing, and Done, although what is possible depends on the workspace. This can be null on creation and not otherwise.
    */
-  status?: string;
-  /**
-   * A longer description of the task, which can include markdown formatting. This should fully describe what needs to be done. This can be null on creation and not otherwise.
-   */
-  description?: string;
+  status: string;
   /**
    * The names or emails of the users that the task is assigned to. Either this or assignee must be included, depending on whether the workspaces allows multiple assignees or not. If included, this can be null on creation and not otherwise.
    */
