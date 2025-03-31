@@ -54,7 +54,6 @@
   "devDependencies": {
     "@types/node": "22.10.2",
     "@types/uuid": "10.0.0",
-    "dotenv": "16.4.7",
     "openapi-typescript-codegen": "0.29.0",
     "release-it": "17.11.0",
     "typescript": "5.7.2",

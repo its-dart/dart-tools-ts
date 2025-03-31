@@ -20,16 +20,13 @@ export type OpenAPIConfig = {
 };
 
 export const OpenAPI: OpenAPIConfig = {
-  BASE: 'https://app.itsdart.com/api/v0/public',
+  BASE: `${process.env.DART_HOST ?? 'https://app.itsdart.com'}/api/v0/public`,
   VERSION: '1.0.0',
   WITH_CREDENTIALS: false,
   CREDENTIALS: 'include',
   TOKEN: undefined,
   USERNAME: undefined,
   PASSWORD: undefined,
-  HEADERS: undefined,
+  HEADERS: { Authorization: `Bearer ${process.env.DART_TOKEN}` },
   ENCODE_PATH: undefined,
 };
-
-OpenAPI.BASE = process.env.DART_API_BASE_URL ?? OpenAPI.BASE;
-OpenAPI.HEADERS = { Authorization: `Bearer ${process.env.DART_TOKEN}` };
