@@ -102,32 +102,22 @@ export class DocService {
    * @throws ApiError
    */
   public static listDocs({
-    duids,
-    editor,
-    editorDuid,
     folder,
-    folderDuid,
-    inTrash,
-    isDraft,
+    folderId,
+    ids,
     limit,
     o,
     offset,
-    reportKind,
     s,
-    subscriberDuid,
     text,
     title,
   }: {
-    /**
-     * Filter by DUIDs
-     */
-    duids?: string,
-    editor?: string,
-    editorDuid?: string,
     folder?: string,
-    folderDuid?: string,
-    inTrash?: boolean,
-    isDraft?: boolean,
+    folderId?: string,
+    /**
+     * Filter by IDs
+     */
+    ids?: string,
     /**
      * Number of results to return per page.
      */
@@ -149,12 +139,10 @@ export class DocService {
      * The initial index from which to return the results.
      */
     offset?: number,
-    reportKind?: string,
     /**
      * Search by title, text, or folder title
      */
     s?: string,
-    subscriberDuid?: string,
     text?: string,
     title?: string,
   }): CancelablePromise<PaginatedConciseDocList> {
@@ -162,19 +150,13 @@ export class DocService {
       method: 'GET',
       url: '/docs/list',
       query: {
-        'duids': duids,
-        'editor': editor,
-        'editor_duid': editorDuid,
         'folder': folder,
-        'folder_duid': folderDuid,
-        'in_trash': inTrash,
-        'is_draft': isDraft,
+        'folder_id': folderId,
+        'ids': ids,
         'limit': limit,
         'o': o,
         'offset': offset,
-        'report_kind': reportKind,
         's': s,
-        'subscriber_duid': subscriberDuid,
         'text': text,
         'title': title,
       },

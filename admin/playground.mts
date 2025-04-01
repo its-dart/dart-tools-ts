@@ -1,13 +1,13 @@
-// Get all tasks assigned to someone with a name or email like Peter
+// Get all critical tasks
 import {
   TaskService,
   PaginatedConciseTaskList,
   WrappedTask,
 } from "dart-tools-ts";
 const tasks: PaginatedConciseTaskList = await TaskService.listTasks({
-  assignee: "Peter",
+  priority: "Critical",
 });
-console.log("Peter's tasks:");
+console.log("All critical tasks:");
 if (tasks.results.length) {
   tasks.results.forEach((task) => {
     console.log(

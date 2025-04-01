@@ -53,10 +53,10 @@ import * as dart from "dart-tools-ts";
 ### Example
 
 ```ts
-// Get all tasks assigned to someone with a name or email like Peter
-import { TaskService, PaginatedConciseTaskList, WrappedTask } from "dart-tools-ts";
+// Get all critical tasks
+import { TaskService, PaginatedConciseTaskList } from "dart-tools-ts";
 const filteredTasks: PaginatedConciseTaskList = await TaskService.listTasks({
-  assignee: "Peter",
+  priority: "Critical",
 });
 
 // Create a new task called 'Update the landing page' with priority 'Critical' (i.e. p0)
