@@ -34,7 +34,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "make-api": "./admin/make-api.sh",
+    "make-api": "./admin/make-api.sh && yarn run prettier-fix-generated",
     "start:playground:cjs": "node --env-file=.env -r ./admin/playground.cjs",
     "start:playground:esm": "node --env-file=.env --no-warnings --loader ts-node/esm ./admin/playground.mts",
     "clean": "rm -rf dist/*",
@@ -46,6 +46,7 @@
     "test:esm": "node --input-type=module -e 'import { ApiError, CommentService, ConfigService, DocService, TaskService } from \"dart-tools-ts\"; console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write . --list-different",
+    "prettier-fix-generated": "prettier --write ./dart/generated",
     "release": "release-it"
   },
   "dependencies": {

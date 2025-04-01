@@ -121,7 +121,7 @@ import subprocess
 import tempfile
 
 
-FILES_TO_PATCH: dict[str, list[str]] = {
+FILES_TO_FUNCS_TO_PATCH: dict[str, list[str]] = {
     "services/DocService.ts": ["listDocs"],
     "services/TaskService.ts": ["listTasks"],
 }
@@ -178,7 +178,7 @@ def main():
     generated_dir = sys.argv[1]
     generated_with_options_dir = sys.argv[2]
 
-    for target_file_path, target_function_names in FILES_TO_PATCH.items():
+    for target_file_path, target_function_names in FILES_TO_FUNCS_TO_PATCH.items():
         print(f"Processing {target_file_path}")
         file_to_patch = os.path.join(generated_dir, target_file_path)
         file_generated_with_options = os.path.join(generated_with_options_dir, target_file_path)
