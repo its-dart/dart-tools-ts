@@ -10,7 +10,6 @@
 
 `dart-tools-ts` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript.
 
-
 - [Installation](#installation)
 - [Usage](#usage)
   - [Authentication of the Dart Client](#authentication-of-the-dart-client)
@@ -20,17 +19,13 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-
-
 ## Installation
 
 ```sh
 npm i dart-tools-ts
 ```
 
-
 ## Usage
-
 
 ### Authentication of the Dart Client
 
@@ -53,29 +48,21 @@ import * as dart from "dart-tools-ts";
 ### Example
 
 ```ts
-// Get all tasks assigned to someone with a name or email like Peter
-import { type PaginatedTaskList, TasksService } from "dart-tools-ts";
-const filteredTasks: PaginatedTaskList = await TasksService.tasksList("Peter");
+// Get all critical tasks
+import { TaskService, PaginatedConciseTaskList } from "dart-tools-ts";
+const filteredTasks: PaginatedConciseTaskList = await TaskService.listTasks({
+  priority: "Critical",
+});
 
 // Create a new task called 'Update the landing page' with priority 'Critical' (i.e. p0)
-import { OperationModelKind, OperationKind, Priority, type TaskCreate, TransactionKind, TransactionsService } from "dart-tools-ts";
-
-const taskCreate: TaskCreate = {
-  title: "Update the landing page",
-  priority: Priority.CRITICAL,
-};
-const createResult = await TransactionsService.transactionsCreate({
-  items: [{
-    kind: TransactionKind.TASK_CREATE,
-    operations: [{
-      kind: OperationKind.CREATE,
-      model: OperationModelKind.TASK,
-      data: taskCreate,
-    }],
-  }],
+import { TaskService, WrappedTask } from "dart-tools-ts";
+const task: WrappedTask = await TaskService.createTask({
+  item: {
+    title: "Update the landing page",
+    priority: "Critical",
+  },
 });
 ```
-
 
 ## Help and Resources
 
@@ -87,11 +74,9 @@ const createResult = await TransactionsService.transactionsCreate({
 - [Chat on Discord](https://discord.gg/RExv8jEkSh)
 - Email us at [support@itsdart.com](mailto:support@itsdart.com)
 
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
-
 
 ## License
 

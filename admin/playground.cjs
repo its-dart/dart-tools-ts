@@ -1,2 +1,2 @@
-const dart = require("../dist/cjs/index.js");
+const dart = require("../dist/index.js");
 global.dart = dart;

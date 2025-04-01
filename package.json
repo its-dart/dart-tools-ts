@@ -1,46 +1,63 @@
 {
   "name": "dart-tools-ts",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "The Dart TypeScript/JavaScript client",
-  "license": "MIT",
-  "author": "Dart (software@itsdart.com)",
-  "engines": {
-    "node": ">=18.0.0"
-  },
+  "keywords": [
+    "dart",
+    "projectmanagement",
+    "taskmanagement"
+  ],
   "homepage": "https://github.com/its-dart/dart-tools-ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/its-dart/dart-tools-ts.git"
   },
   "bugs": "https://app.itsdart.com/p/r/JFyPnhL9En61",
+  "license": "MIT",
+  "author": "Dart (software@itsdart.com)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./index.d.ts",
   "exports": {
-    "import": "./dist/mjs/index.js",
-    "require": "./dist/cjs/index.js"
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
-  "types": "dist/mjs/index.d.ts",
   "files": [
-    "dist"
+    "/dist",
+    "/index.d.ts"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "make-api": "./admin/make-api.sh",
+    "make-api": "./admin/make-api.sh && yarn run prettier-fix-generated",
     "start:playground:cjs": "node --env-file=.env -r ./admin/playground.cjs",
-    "start:playground:mts": "node --env-file=.env --experimental-specifier-resolution=node --no-warnings --loader ts-node/esm ./admin/playground.mts",
-    "build:cjs": "tsc --project tsconfig.cjs.json && cp package.cjs.json dist/cjs/package.json",
-    "build:mjs": "tsc --project tsconfig.mjs.json && cp package.mjs.json dist/mjs/package.json",
-    "build": "yarn run build:cjs && yarn run build:mjs",
-    "test": "echo \"dart-tools-ts doesn't have tests yet\"",
+    "start:playground:esm": "node --env-file=.env --no-warnings --loader ts-node/esm ./admin/playground.mts",
+    "clean": "rm -rf dist/*",
+    "build": "yarn run clean && npm run build:cjs && npm run build:esm && yarn run test",
+    "build:cjs": "tsc --project ./configs/tsconfig.cjs.json",
+    "build:esm": "rollup --config ./configs/rollup.config.js",
+    "test": "yarn run test:cjs && yarn run test:esm",
+    "test:cjs": "node -e 'const { ApiError, CommentService, ConfigService, DocService, TaskService } = require(\"dart-tools-ts\"); console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
+    "test:esm": "node --input-type=module -e 'import { ApiError, CommentService, ConfigService, DocService, TaskService } from \"dart-tools-ts\"; console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write . --list-different",
+    "prettier-fix-generated": "prettier --write ./dart/generated",
     "release": "release-it"
   },
   "dependencies": {
     "axios": "~1.8"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "12.1.2",
     "@types/node": "22.10.2",
     "@types/uuid": "10.0.0",
-    "dotenv": "16.4.7",
     "openapi-typescript-codegen": "0.29.0",
+    "prettier": "3.5.3",
     "release-it": "17.11.0",
     "ts-node": "10.9.2",
     "typescript": "5.7.2",
@@ -48,11 +65,6 @@
     "vite": "6.0.6",
     "vitest": "2.1.8"
   },
-  "keywords": [
-    "dart",
-    "projectmanagement",
-    "taskmanagement"
-  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

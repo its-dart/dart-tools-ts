@@ -2,7 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { ApiRequestOptions } from './ApiRequestOptions';
+import type { ApiRequestOptions } from "./ApiRequestOptions";
 
 type Resolver<T> = (options: ApiRequestOptions) => Promise<T>;
 type Headers = Record<string, string>;
@@ -11,7 +11,7 @@ export type OpenAPIConfig = {
   BASE: string;
   VERSION: string;
   WITH_CREDENTIALS: boolean;
-  CREDENTIALS: 'include' | 'omit' | 'same-origin';
+  CREDENTIALS: "include" | "omit" | "same-origin";
   TOKEN?: string | Resolver<string> | undefined;
   USERNAME?: string | Resolver<string> | undefined;
   PASSWORD?: string | Resolver<string> | undefined;
@@ -20,16 +20,13 @@ export type OpenAPIConfig = {
 };
 
 export const OpenAPI: OpenAPIConfig = {
-  BASE: '',
-  VERSION: '1.0.0',
+  BASE: `${process.env.DART_HOST ?? "https://app.itsdart.com"}/api/v0/public`,
+  VERSION: "1.0.0",
   WITH_CREDENTIALS: false,
-  CREDENTIALS: 'include',
+  CREDENTIALS: "include",
   TOKEN: undefined,
   USERNAME: undefined,
   PASSWORD: undefined,
-  HEADERS: undefined,
+  HEADERS: { Authorization: `Bearer ${process.env.DART_TOKEN}` },
   ENCODE_PATH: undefined,
 };
-
-OpenAPI.BASE = process.env.DART_API_BASE_URL ?? 'https://app.itsdart.com';
-OpenAPI.HEADERS = { Authorization: `Bearer ${process.env.DART_TOKEN}` };

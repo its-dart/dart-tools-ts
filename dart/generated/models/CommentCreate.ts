@@ -3,12 +3,12 @@
 /* tslint:disable */
 /* eslint-disable */
 export type CommentCreate = {
-  duid: string;
-  authoredByAi?: boolean;
-  authorDuid: string;
-  taskDuid: string;
-  rootDuid?: string | null;
-  text?: any;
-  publishedAt?: string | null;
+  /**
+   * The ID of the task that the comment is associated with. This cannot be null.
+   */
+  taskId: string;
+  /**
+   * The full content of the comment, which can include markdown formatting. This cannot be null.
+   */
+  text: string;
 };
-
