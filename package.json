@@ -47,15 +47,15 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@rollup/plugin-typescript": "^12.1.2",
-    "axios": "~1.8",
-    "ts-node": "^10.9.2"
+    "axios": "~1.8"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
     "@types/node": "22.10.2",
     "@types/uuid": "10.0.0",
     "openapi-typescript-codegen": "0.29.0",
     "release-it": "17.11.0",
+    "ts-node": "^10.9.2",
     "typescript": "5.7.2",
     "uuid": "11.0.3",
     "vite": "6.0.6",
