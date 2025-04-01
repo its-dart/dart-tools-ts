@@ -67,4 +67,3 @@ export type ConciseTask = {
    */
   timeTracking?: string;
 };
-

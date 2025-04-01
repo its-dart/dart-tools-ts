@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { DocCreate } from './DocCreate';
+import type { DocCreate } from "./DocCreate";
 export type WrappedDocCreate = {
   item: DocCreate;
 };
-

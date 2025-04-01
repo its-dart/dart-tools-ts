@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { TaskCreate } from './TaskCreate';
+import type { TaskCreate } from "./TaskCreate";
 export type WrappedTaskCreate = {
   item: TaskCreate;
 };
-

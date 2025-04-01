@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Comment } from './Comment';
+import type { Comment } from "./Comment";
 export type WrappedComment = {
   item: Comment;
 };
-

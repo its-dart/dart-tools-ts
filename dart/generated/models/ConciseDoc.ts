@@ -23,4 +23,3 @@ export type ConciseDoc = {
    */
   folder: string;
 };
-

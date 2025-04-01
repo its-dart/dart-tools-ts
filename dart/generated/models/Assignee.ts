@@ -6,4 +6,3 @@ export type Assignee = {
   name: string;
   email: string;
 };
-

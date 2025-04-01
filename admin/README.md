@@ -1,11 +1,9 @@
 # Admin functionality
 
-
 - [Admin functionality](#admin-functionality)
   - [Local setup](#local-setup)
   - [Sync API](#sync-api)
   - [Deploy](#deploy)
-
 
 ## Local setup
 
@@ -15,11 +13,9 @@
 4. Test CJS by running `yarn start:playground:cjs` and using `dart` in the REPL
 5. Test ESM by running `yarn start:playground:esm`, which runs the scenario in `admin/playground.mts`
 
-
 ## Sync API
 
 1. Run `yarn make-api`
-
 
 ## Deploy
 

@@ -2,13 +2,13 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { PaginatedConciseTaskList } from '../models/PaginatedConciseTaskList';
-import type { WrappedTask } from '../models/WrappedTask';
-import type { WrappedTaskCreate } from '../models/WrappedTaskCreate';
-import type { WrappedTaskUpdate } from '../models/WrappedTaskUpdate';
-import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { PaginatedConciseTaskList } from "../models/PaginatedConciseTaskList";
+import type { WrappedTask } from "../models/WrappedTask";
+import type { WrappedTaskCreate } from "../models/WrappedTaskCreate";
+import type { WrappedTaskUpdate } from "../models/WrappedTaskUpdate";
+import type { CancelablePromise } from "../core/CancelablePromise";
+import { OpenAPI } from "../core/OpenAPI";
+import { request as __request } from "../core/request";
 export class TaskService {
   /**
    * Create a new task
@@ -17,14 +17,12 @@ export class TaskService {
    * @returns WrappedTask
    * @throws ApiError
    */
-  public static createTask(
-    requestBody: WrappedTaskCreate,
-  ): CancelablePromise<WrappedTask> {
+  public static createTask(requestBody: WrappedTaskCreate): CancelablePromise<WrappedTask> {
     return __request(OpenAPI, {
-      method: 'POST',
-      url: '/tasks',
+      method: "POST",
+      url: "/tasks",
       body: requestBody,
-      mediaType: 'application/json',
+      mediaType: "application/json",
     });
   }
   /**
@@ -34,14 +32,12 @@ export class TaskService {
    * @returns WrappedTask Success, including the retrieved task
    * @throws ApiError
    */
-  public static retrieveTask(
-    id: string,
-  ): CancelablePromise<WrappedTask> {
+  public static retrieveTask(id: string): CancelablePromise<WrappedTask> {
     return __request(OpenAPI, {
-      method: 'GET',
-      url: '/tasks/{id}',
+      method: "GET",
+      url: "/tasks/{id}",
       path: {
-        'id': id,
+        id: id,
       },
       errors: {
         400: `Invalid request, including the errors`,
@@ -56,18 +52,15 @@ export class TaskService {
    * @returns WrappedTask Success, including the updated task
    * @throws ApiError
    */
-  public static updateTask(
-    id: string,
-    requestBody: WrappedTaskUpdate,
-  ): CancelablePromise<WrappedTask> {
+  public static updateTask(id: string, requestBody: WrappedTaskUpdate): CancelablePromise<WrappedTask> {
     return __request(OpenAPI, {
-      method: 'PUT',
-      url: '/tasks/{id}',
+      method: "PUT",
+      url: "/tasks/{id}",
       path: {
-        'id': id,
+        id: id,
       },
       body: requestBody,
-      mediaType: 'application/json',
+      mediaType: "application/json",
       errors: {
         400: `Invalid request, including the errors`,
       },
@@ -80,14 +73,12 @@ export class TaskService {
    * @returns WrappedTask Success, including the deleted task
    * @throws ApiError
    */
-  public static deleteTask(
-    id: string,
-  ): CancelablePromise<WrappedTask> {
+  public static deleteTask(id: string): CancelablePromise<WrappedTask> {
     return __request(OpenAPI, {
-      method: 'DELETE',
-      url: '/tasks/{id}',
+      method: "DELETE",
+      url: "/tasks/{id}",
       path: {
-        'id': id,
+        id: id,
       },
       errors: {
         400: `Invalid request, including the errors`,
@@ -121,62 +112,62 @@ export class TaskService {
     type,
     typeId,
   }: {
-    assignee?: string,
-    assigneeId?: string,
-    dartboard?: string,
-    dartboardId?: string,
-    description?: string,
-    dueAtAfter?: string,
-    dueAtBefore?: string,
+    assignee?: string;
+    assigneeId?: string;
+    dartboard?: string;
+    dartboardId?: string;
+    description?: string;
+    dueAtAfter?: string;
+    dueAtBefore?: string;
     /**
      * Filter by IDs
      */
-    ids?: string,
+    ids?: string;
     /**
      * Number of results to return per page.
      */
-    limit?: number,
+    limit?: number;
     /**
      * The initial index from which to return the results.
      */
-    offset?: number,
-    priority?: string,
-    size?: number,
-    startAtAfter?: string,
-    startAtBefore?: string,
-    status?: string,
-    statusId?: string,
-    tag?: string,
-    tagId?: string,
-    title?: string,
-    type?: string,
-    typeId?: string,
+    offset?: number;
+    priority?: string;
+    size?: number;
+    startAtAfter?: string;
+    startAtBefore?: string;
+    status?: string;
+    statusId?: string;
+    tag?: string;
+    tagId?: string;
+    title?: string;
+    type?: string;
+    typeId?: string;
   }): CancelablePromise<PaginatedConciseTaskList> {
     return __request(OpenAPI, {
-      method: 'GET',
-      url: '/tasks/list',
+      method: "GET",
+      url: "/tasks/list",
       query: {
-        'assignee': assignee,
-        'assignee_id': assigneeId,
-        'dartboard': dartboard,
-        'dartboard_id': dartboardId,
-        'description': description,
-        'due_at_after': dueAtAfter,
-        'due_at_before': dueAtBefore,
-        'ids': ids,
-        'limit': limit,
-        'offset': offset,
-        'priority': priority,
-        'size': size,
-        'start_at_after': startAtAfter,
-        'start_at_before': startAtBefore,
-        'status': status,
-        'status_id': statusId,
-        'tag': tag,
-        'tag_id': tagId,
-        'title': title,
-        'type': type,
-        'type_id': typeId,
+        assignee: assignee,
+        assignee_id: assigneeId,
+        dartboard: dartboard,
+        dartboard_id: dartboardId,
+        description: description,
+        due_at_after: dueAtAfter,
+        due_at_before: dueAtBefore,
+        ids: ids,
+        limit: limit,
+        offset: offset,
+        priority: priority,
+        size: size,
+        start_at_after: startAtAfter,
+        start_at_before: startAtBefore,
+        status: status,
+        status_id: statusId,
+        tag: tag,
+        tag_id: tagId,
+        title: title,
+        type: type,
+        type_id: typeId,
       },
     });
   }

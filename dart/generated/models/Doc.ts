@@ -24,4 +24,3 @@ export type Doc = {
    */
   text: string;
 };
-

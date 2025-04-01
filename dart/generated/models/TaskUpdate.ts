@@ -64,4 +64,3 @@ export type TaskUpdate = {
    */
   timeTracking?: string;
 };
-

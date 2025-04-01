@@ -16,4 +16,3 @@ export type DocCreate = {
    */
   text?: string;
 };
-

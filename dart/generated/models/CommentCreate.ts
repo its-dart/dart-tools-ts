@@ -12,4 +12,3 @@ export type CommentCreate = {
    */
   text: string;
 };
-

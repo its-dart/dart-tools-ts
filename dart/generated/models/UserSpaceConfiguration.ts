@@ -2,7 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Assignee } from './Assignee';
+import type { Assignee } from "./Assignee";
 export type UserSpaceConfiguration = {
   today: string;
   dartboards: Array<string>;
@@ -14,4 +14,3 @@ export type UserSpaceConfiguration = {
   priorities: Array<string>;
   readonly sizes: Array<number>;
 };
-

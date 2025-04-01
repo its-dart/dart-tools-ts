@@ -2,11 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { ConciseTask } from './ConciseTask';
+import type { ConciseTask } from "./ConciseTask";
 export type PaginatedConciseTaskList = {
   count: number;
   next?: string | null;
   previous?: string | null;
   results: Array<ConciseTask>;
 };
-

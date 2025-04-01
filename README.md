@@ -10,7 +10,6 @@
 
 `dart-tools-ts` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript.
 
-
 - [Installation](#installation)
 - [Usage](#usage)
   - [Authentication of the Dart Client](#authentication-of-the-dart-client)
@@ -20,17 +19,13 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-
-
 ## Installation
 
 ```sh
 npm i dart-tools-ts
 ```
 
-
 ## Usage
-
 
 ### Authentication of the Dart Client
 
@@ -69,7 +64,6 @@ const task: WrappedTask = await TaskService.createTask({
 });
 ```
 
-
 ## Help and Resources
 
 - [Homepage](https://www.itsdart.com/?nr=1)
@@ -80,11 +74,9 @@ const task: WrappedTask = await TaskService.createTask({
 - [Chat on Discord](https://discord.gg/RExv8jEkSh)
 - Email us at [support@itsdart.com](mailto:support@itsdart.com)
 
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
-
 
 ## License
 

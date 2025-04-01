@@ -2,10 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserSpaceConfiguration } from '../models/UserSpaceConfiguration';
-import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { UserSpaceConfiguration } from "../models/UserSpaceConfiguration";
+import type { CancelablePromise } from "../core/CancelablePromise";
+import { OpenAPI } from "../core/OpenAPI";
+import { request as __request } from "../core/request";
 export class ConfigService {
   /**
    * Get user space configuration
@@ -15,8 +15,8 @@ export class ConfigService {
    */
   public static getConfig(): CancelablePromise<UserSpaceConfiguration> {
     return __request(OpenAPI, {
-      method: 'GET',
-      url: '/config',
+      method: "GET",
+      url: "/config",
       errors: {
         400: `Invalid request, including the errors`,
       },

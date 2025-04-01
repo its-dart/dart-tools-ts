@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { TaskUpdate } from './TaskUpdate';
+import type { TaskUpdate } from "./TaskUpdate";
 export type WrappedTaskUpdate = {
   item: TaskUpdate;
 };
-
