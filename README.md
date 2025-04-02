@@ -2,7 +2,7 @@
   <h1>Dart Tools TS</h1>
   <p>
     <a href="https://npmjs.com/package/dart-tools"><img src="https://img.shields.io/npm/v/dart-tools" alt="NPM"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/its-dart/dart-tools" alt="License"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/its-dart/dart-tools-ts" alt="License"></a>
   </p>
 </div>
 
