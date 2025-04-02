@@ -23,6 +23,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     sed -i "" "s|BASE: '.*',|BASE: \`\${process.env.DART_HOST ?? 'https://app.itsdart.com'}/api/v0/public\`,|" ./dart/generated/core/OpenAPI.ts
     sed -i "" "s|HEADERS: .*,|HEADERS: { Authorization: \`Bearer \${process.env.DART_TOKEN}\` },|" ./dart/generated/core/OpenAPI.ts
 else
-    sed -i "s|BASE: '.*',|BASE: 'https://app.itsdart.com/api/v0/public',|" ./dart/generated/core/OpenAPI.ts
+    sed -i "s|BASE: '.*',|BASE: \`\${process.env.DART_HOST ?? 'https://app.itsdart.com'}/api/v0/public\`,|" ./dart/generated/core/OpenAPI.ts
     sed -i "s|HEADERS: .*,|HEADERS: { Authorization: \`Bearer \${process.env.DART_TOKEN}\` },|" ./dart/generated/core/OpenAPI.ts
 fi
