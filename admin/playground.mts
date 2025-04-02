@@ -1,5 +1,5 @@
 // Get all critical tasks
-import { TaskService, PaginatedConciseTaskList, WrappedTask } from "dart-tools-ts";
+import { TaskService, PaginatedConciseTaskList, WrappedTask } from "dart-tools";
 const tasks: PaginatedConciseTaskList = await TaskService.listTasks({
   priority: "Critical",
 });

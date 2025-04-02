@@ -1,5 +1,5 @@
 {
-  "name": "dart-tools-ts",
+  "name": "dart-tools",
   "version": "0.3.0",
   "description": "The Dart TypeScript/JavaScript client",
   "keywords": [
@@ -7,7 +7,7 @@
     "projectmanagement",
     "taskmanagement"
   ],
-  "homepage": "https://github.com/its-dart/dart-tools-ts",
+  "homepage": "https://github.com/its-dart/dart-tools",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/its-dart/dart-tools-ts.git"
@@ -42,8 +42,8 @@
     "build:cjs": "tsc --project ./configs/tsconfig.cjs.json",
     "build:esm": "rollup --config ./configs/rollup.config.js",
     "test": "yarn run test:cjs && yarn run test:esm",
-    "test:cjs": "node -e 'const { ApiError, CommentService, ConfigService, DocService, TaskService } = require(\"dart-tools-ts\"); console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
-    "test:esm": "node --input-type=module -e 'import { ApiError, CommentService, ConfigService, DocService, TaskService } from \"dart-tools-ts\"; console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
+    "test:cjs": "node -e 'const { ApiError, CommentService, ConfigService, DocService, TaskService } = require(\"dart-tools\"); console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
+    "test:esm": "node --input-type=module -e 'import { ApiError, CommentService, ConfigService, DocService, TaskService } from \"dart-tools\"; console.log(ApiError, CommentService, ConfigService, DocService, TaskService)'",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write . --list-different",
     "prettier-fix-generated": "prettier --write ./dart/generated",

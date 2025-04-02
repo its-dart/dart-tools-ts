@@ -1,14 +1,14 @@
 <div align="center">
   <h1>Dart Tools TS</h1>
   <p>
-    <a href="https://npmjs.com/package/dart-tools-ts"><img src="https://img.shields.io/npm/v/dart-tools-ts" alt="NPM"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/its-dart/dart-tools-ts" alt="License"></a>
+    <a href="https://npmjs.com/package/dart-tools"><img src="https://img.shields.io/npm/v/dart-tools" alt="NPM"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/its-dart/dart-tools" alt="License"></a>
   </p>
 </div>
 
 [Dart](https://itsdart.com?nr=1) is Project Management powered by AI.
 
-`dart-tools-ts` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript.
+`dart-tools` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -22,7 +22,7 @@
 ## Installation
 
 ```sh
-npm i dart-tools-ts
+npm i dart-tools
 ```
 
 ## Usage
@@ -36,26 +36,26 @@ Visit [your Dart profile](https://app.itsdart.com/?settings=account) and save th
 To use this package in a CommonJS (CJS) script, you can require the module with
 
 ```js
-const dart = require("dart-tools-ts");
+const dart = require("dart-tools");
 ```
 
 To use this package in an ECMAScript Module (MJS) script, you can import the module with
 
 ```ts
-import * as dart from "dart-tools-ts";
+import * as dart from "dart-tools";
 ```
 
 ### Example
 
 ```ts
 // Get all critical tasks
-import { TaskService, PaginatedConciseTaskList } from "dart-tools-ts";
+import { TaskService, PaginatedConciseTaskList } from "dart-tools";
 const filteredTasks: PaginatedConciseTaskList = await TaskService.listTasks({
   priority: "Critical",
 });
 
 // Create a new task called 'Update the landing page' with priority 'Critical' (i.e. p0)
-import { TaskService, WrappedTask } from "dart-tools-ts";
+import { TaskService, WrappedTask } from "dart-tools";
 const task: WrappedTask = await TaskService.createTask({
   item: {
     title: "Update the landing page",
