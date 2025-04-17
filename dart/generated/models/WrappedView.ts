@@ -2,7 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type Assignee = {
-  name: string;
-  email: string;
+import type { View } from "./View";
+export type WrappedView = {
+  item: View;
 };

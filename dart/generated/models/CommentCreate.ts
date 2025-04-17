@@ -4,11 +4,11 @@
 /* eslint-disable */
 export type CommentCreate = {
   /**
-   * The ID of the task that the comment is associated with. This cannot be null.
+   * The universal, unique ID of the task that the comment is associated with.
    */
   taskId: string;
   /**
-   * The full content of the comment, which can include markdown formatting. This cannot be null.
+   * The full content of the comment, which can include markdown formatting.
    */
   text: string;
 };

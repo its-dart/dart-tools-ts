@@ -7,19 +7,19 @@
  */
 export type ConciseDoc = {
   /**
-   * The ID. This can and should be null on creation and not otherwise.
+   * The universal, unique ID of the doc.
    */
   id: string;
   /**
-   * The permanent link, which is a URL that can be used to open the doc in Dart. This can and should be null on creation and not otherwise.
+   * The URL that can be used to open the doc in the Dart web UI.
    */
-  permalink: string;
+  htmlUrl: string;
   /**
-   * The title, which is a short description of the document. This cannot be null.
+   * The title, which is a short description of the doc.
    */
   title: string;
   /**
-   * The title of the folder, which is a project or list of docs. One common option is Docs, although what is possible depends on the workspace. If the folder is ambiguous it may need to include a prefix with the name of the space, which is a folder for folders.
+   * The full title of the folder, which is a project or list of docs.
    */
   folder: string;
 };
