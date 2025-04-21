@@ -18,6 +18,7 @@ export type { DocUpdate } from "./models/DocUpdate";
 export type { Folder } from "./models/Folder";
 export type { PaginatedConciseDocList } from "./models/PaginatedConciseDocList";
 export type { PaginatedConciseTaskList } from "./models/PaginatedConciseTaskList";
+export { Priority } from "./models/Priority";
 export type { Task } from "./models/Task";
 export type { TaskCreate } from "./models/TaskCreate";
 export type { TaskUpdate } from "./models/TaskUpdate";

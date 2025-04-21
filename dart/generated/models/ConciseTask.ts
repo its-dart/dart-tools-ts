@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Priority } from "./Priority";
 /**
  * This concise task serializer is going to be used in tasks listing view only.
  */
@@ -47,9 +48,9 @@ export type ConciseTask = {
    */
   tags?: Array<string>;
   /**
-   * The priority, which is a string that can be one of Critical, High, Medium, or Low. This is used to sort tasks and determine which tasks should be done first.
+   * The priority, which is a string that can be one of the specified options. This is used to sort tasks and determine which tasks should be done first.
    */
-  priority?: string | null;
+  priority?: Priority | null;
   /**
    * The start date, which is a date and time that the task should be started by in ISO format. It should be at 9:00am in the timezone of the user.
    */

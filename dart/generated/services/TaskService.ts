@@ -98,6 +98,8 @@ export class TaskService {
     dueAtAfter,
     dueAtBefore,
     ids,
+    inTrash,
+    isCompleted,
     limit,
     offset,
     priority,
@@ -123,6 +125,8 @@ export class TaskService {
      * Filter by IDs
      */
     ids?: string;
+    inTrash?: boolean;
+    isCompleted?: boolean;
     /**
      * Number of results to return per page.
      */
@@ -155,6 +159,8 @@ export class TaskService {
         due_at_after: dueAtAfter,
         due_at_before: dueAtBefore,
         ids: ids,
+        in_trash: inTrash,
+        is_completed: isCompleted,
         limit: limit,
         offset: offset,
         priority: priority,

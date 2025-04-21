@@ -96,6 +96,7 @@ export class DocService {
     folder,
     folderId,
     ids,
+    inTrash,
     limit,
     o,
     offset,
@@ -109,6 +110,7 @@ export class DocService {
      * Filter by IDs
      */
     ids?: string;
+    inTrash?: boolean;
     /**
      * Number of results to return per page.
      */
@@ -144,6 +146,7 @@ export class DocService {
         folder: folder,
         folder_id: folderId,
         ids: ids,
+        in_trash: inTrash,
         limit: limit,
         o: o,
         offset: offset,
