@@ -70,7 +70,7 @@ const task: WrappedTask = await TaskService.createTask({
 - [Web App](https://app.itsdart.com/)
 - [Help Center](https://help.itsdart.com/)
 - [Bugs and Features](https://app.itsdart.com/p/r/JFyPnhL9En61)
-- [Library Source](https://github.com/its-dart/dart-tools/)
+- [Library Source](https://github.com/its-dart/dart-tools-ts/)
 - [Chat on Discord](https://discord.gg/RExv8jEkSh)
 - Email us at [support@itsdart.com](mailto:support@itsdart.com)
 
