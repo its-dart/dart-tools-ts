@@ -66,7 +66,7 @@ const task: WrappedTask = await TaskService.createTask({
 
 ## Help and Resources
 
-- [Homepage](https://www.itsdart.com/?nr=1)
+- [Homepage](https://itsdart.com/?nr=1)
 - [Web App](https://app.itsdart.com/)
 - [Help Center](https://help.itsdart.com/)
 - [Bugs and Features](https://app.itsdart.com/p/r/JFyPnhL9En61)
