@@ -23,6 +23,7 @@ export class ViewService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `View not found, including the errors`,
       },
     });
   }

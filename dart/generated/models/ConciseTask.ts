@@ -52,17 +52,17 @@ export type ConciseTask = {
    */
   priority?: Priority | null;
   /**
-   * The start date, which is a date and time that the task should be started by in ISO format. It should be at 9:00am in the timezone of the user.
+   * The start date, which is a date that the task should be started by in ISO format, like YYYY-MM-DD.
    */
   startAt?: string | null;
   /**
-   * The due date, which is a date and time that the task should be completed by in ISO format. It should be at 9:00am in the timezone of the user.
+   * The due date, which is a date that the task should be completed by in ISO format, like YYYY-MM-DD.
    */
   dueAt?: string | null;
   /**
-   * The size, which is a number that represents the amount of work that needs to be done. This is used to determine how long the task will take to complete.
+   * The size, which represents the amount of work that needs to be done. This is used to determine how long the task will take to complete.
    */
-  size?: number | null;
+  size?: string | number | null;
   /**
    * The time tracking, which is a string that indicates the amount of time spent on the task in hh:mm:ss format (or an empty string if no time has been tracked).
    */

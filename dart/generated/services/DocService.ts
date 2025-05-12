@@ -44,6 +44,7 @@ export class DocService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Doc not found, including the errors`,
       },
     });
   }
@@ -66,6 +67,7 @@ export class DocService {
       mediaType: "application/json",
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Doc not found, including the errors`,
       },
     });
   }
@@ -85,10 +87,12 @@ export class DocService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Doc not found, including the errors`,
       },
     });
   }
   /**
+   * List all docs that the user has access to. This will return a list of docs, including the title, folder, text and others.
    * @returns PaginatedConciseDocList
    * @throws ApiError
    */
@@ -120,14 +124,14 @@ export class DocService {
      *
      * * `order` - Order
      * * `-order` - Order (descending)
-     * * `created` - Created at
-     * * `-created` - Created at (descending)
-     * * `recent` - Recent
-     * * `-recent` - Recent (descending)
+     * * `created_at` - Created at
+     * * `-created_at` - Created at (descending)
+     * * `updated_at` - Updated at
+     * * `-updated_at` - Updated at (descending)
      * * `title` - Title
      * * `-title` - Title (descending)
      */
-    o?: Array<"-created" | "-order" | "-recent" | "-title" | "created" | "order" | "recent" | "title">;
+    o?: Array<"-created_at" | "-order" | "-title" | "-updated_at" | "created_at" | "order" | "title" | "updated_at">;
     /**
      * The initial index from which to return the results.
      */

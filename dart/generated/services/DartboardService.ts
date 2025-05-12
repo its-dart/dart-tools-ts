@@ -23,6 +23,7 @@ export class DartboardService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Dartboard not found, including the errors`,
       },
     });
   }

@@ -41,6 +41,7 @@ export class TaskService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Task not found, including the errors`,
       },
     });
   }
@@ -63,6 +64,7 @@ export class TaskService {
       mediaType: "application/json",
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Task not found, including the errors`,
       },
     });
   }
@@ -82,10 +84,12 @@ export class TaskService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Task not found, including the errors`,
       },
     });
   }
   /**
+   * List all tasks that the user has access to. This will return a list of tasks, including the title, dartboard, status, description and others.
    * @returns PaginatedConciseTaskList
    * @throws ApiError
    */

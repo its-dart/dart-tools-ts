@@ -13,5 +13,5 @@ export type UserSpaceConfiguration = {
   assignees: Array<User>;
   tags: Array<string>;
   priorities: Array<string>;
-  readonly sizes: Array<number>;
+  readonly sizes: string;
 };

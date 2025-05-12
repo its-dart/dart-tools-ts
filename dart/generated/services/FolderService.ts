@@ -23,6 +23,7 @@ export class FolderService {
       },
       errors: {
         400: `Invalid request, including the errors`,
+        404: `Folder not found, including the errors`,
       },
     });
   }

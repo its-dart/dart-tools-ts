@@ -17,9 +17,6 @@ export class ConfigService {
     return __request(OpenAPI, {
       method: "GET",
       url: "/config",
-      errors: {
-        400: `Invalid request, including the errors`,
-      },
     });
   }
 }
