@@ -19,7 +19,6 @@
 
 ## Deploy
 
-1. Bump the version in `package.json`
-2. Commit and push all local changes to GitHub
-3. Run `npm login` if needed
-4. Run `yarn release` and follow the prompts (usually they are all a yes), confirming each step by pressing enter
+1. Commit and push all local changes to GitHub
+2. Run `npm login` if needed
+3. Run `yarn release` and follow the prompts (usually they are all a yes), confirming each step by pressing enter
