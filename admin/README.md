@@ -23,6 +23,6 @@
 2. Run `npm login` if needed
 3. Run `yarn release` and follow the prompts (usually they are all a yes), confirming each step by pressing enter
 
-## Dependency upgrade
+## Dependency upgrading
 
 1. Run `yarn req-up-all` and select everything to update all FE dependencies
