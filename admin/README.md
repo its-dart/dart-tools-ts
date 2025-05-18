@@ -4,6 +4,7 @@
   - [Local setup](#local-setup)
   - [Sync API](#sync-api)
   - [Deploy](#deploy)
+  - [Dependency updating](#dependency-updating)
 
 ## Local setup
 
