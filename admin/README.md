@@ -27,3 +27,5 @@
 ## Dependency updating
 
 1. Run `yarn req-up-all` and select everything to update all FE dependencies
+2. Manually set the versions in `dependencies`, but not `devDependencies`, to be `~` the lowest functional minor version
+3. Run `yarn install`
