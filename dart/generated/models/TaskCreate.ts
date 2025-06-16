@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
 export type TaskCreate = {
   /**
@@ -31,7 +32,7 @@ export type TaskCreate = {
   /**
    * The names or emails of the users that the task is assigned to. Either this or assignee must be included, depending on whether the workspaces allows multiple assignees or not.
    */
-  assignees?: Array<string>;
+  assignees?: any[] | null;
   /**
    * The name or email of the user that the task is assigned to. Either this or assignees must be included, depending on whether the workspaces allows multiple assignees or not.
    */
@@ -57,7 +58,7 @@ export type TaskCreate = {
    */
   size?: string | number | null;
   /**
-   * The time tracking, which is a string that indicates the amount of time spent on the task in hh:mm:ss format (or an empty string if no time has been tracked).
+   * The custom properties, which is a dict of custom properties that are associated with the task.
    */
-  timeTracking?: string;
+  customProperties?: CustomProperties | null;
 };

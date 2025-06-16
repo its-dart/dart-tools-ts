@@ -11,6 +11,7 @@ export type { Comment } from "./models/Comment";
 export type { CommentCreate } from "./models/CommentCreate";
 export type { ConciseDoc } from "./models/ConciseDoc";
 export type { ConciseTask } from "./models/ConciseTask";
+export type { CustomProperties } from "./models/CustomProperties";
 export type { Dartboard } from "./models/Dartboard";
 export type { Doc } from "./models/Doc";
 export type { DocCreate } from "./models/DocCreate";
