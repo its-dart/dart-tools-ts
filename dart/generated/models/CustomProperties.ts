@@ -2,4 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type CustomProperties = Record<string, boolean | null | any[] | null | string | null | number | null | string>;
+export type CustomProperties = Record<
+  string,
+  boolean | any[] | null | string | null | Array<string> | number | null | string
+>;
