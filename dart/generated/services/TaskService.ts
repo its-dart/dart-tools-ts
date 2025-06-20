@@ -106,6 +106,7 @@ export class TaskService {
     isCompleted,
     limit,
     offset,
+    parentId,
     priority,
     size,
     startAtAfter,
@@ -139,6 +140,7 @@ export class TaskService {
      * The initial index from which to return the results.
      */
     offset?: number;
+    parentId?: string;
     priority?: string;
     size?: number;
     startAtAfter?: string;
@@ -167,6 +169,7 @@ export class TaskService {
         is_completed: isCompleted,
         limit: limit,
         offset: offset,
+        parent_id: parentId,
         priority: priority,
         size: size,
         start_at_after: startAtAfter,
