@@ -17,6 +17,7 @@ export type { Doc } from "./models/Doc";
 export type { DocCreate } from "./models/DocCreate";
 export type { DocUpdate } from "./models/DocUpdate";
 export type { Folder } from "./models/Folder";
+export type { PaginatedCommentList } from "./models/PaginatedCommentList";
 export type { PaginatedConciseDocList } from "./models/PaginatedConciseDocList";
 export type { PaginatedConciseTaskList } from "./models/PaginatedConciseTaskList";
 export { Priority } from "./models/Priority";
