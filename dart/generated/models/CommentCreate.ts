@@ -4,6 +4,10 @@
 /* eslint-disable */
 export type CommentCreate = {
   /**
+   * The universal, unique ID of the parent comment, if any.
+   */
+  parentId?: string;
+  /**
    * The universal, unique ID of the task that the comment is associated with.
    */
   taskId: string;
