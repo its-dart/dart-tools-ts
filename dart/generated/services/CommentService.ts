@@ -33,11 +33,6 @@ export class CommentService {
    * @param authorId
    * @param ids Filter by IDs
    * @param limit Number of results to return per page.
-   * @param o Ordering
-   *
-   * * `published_at` - Published At
-   * * `-published_at` - Published At (descending)
-   * * `hierarchical` - Hierarchical
    * @param offset The initial index from which to return the results.
    * @param parentId
    * @param publishedAtAfter
@@ -53,7 +48,6 @@ export class CommentService {
     authorId?: string,
     ids?: string,
     limit?: number,
-    o?: Array<"-published_at" | "hierarchical" | "published_at">,
     offset?: number,
     parentId?: string | null,
     publishedAtAfter?: string,
@@ -70,7 +64,6 @@ export class CommentService {
         author_id: authorId,
         ids: ids,
         limit: limit,
-        o: o,
         offset: offset,
         parent_id: parentId,
         published_at_after: publishedAtAfter,
