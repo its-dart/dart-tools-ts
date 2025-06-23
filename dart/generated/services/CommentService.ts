@@ -29,39 +29,52 @@ export class CommentService {
   }
   /**
    * List all comments that the user has access to. This will return a list of comments, including the text, associated task ID, and others. Comments are ordered by thread and then by when they were written.
-   * @param taskId
-   * @param author
-   * @param authorId
-   * @param ids Filter by IDs
-   * @param limit Number of results to return per page.
-   * @param o Ordering
-   *
-   * * `published_at` - Published At
-   * * `-published_at` - Published At (descending)
-   * * `hierarchical` - Hierarchical
-   * @param offset The initial index from which to return the results.
-   * @param parentId
-   * @param publishedAtAfter
-   * @param publishedAtBefore
-   * @param task
-   * @param text
    * @returns PaginatedCommentList
    * @throws ApiError
    */
-  public static listComments(
-    taskId: string,
-    author?: string,
-    authorId?: string,
-    ids?: string,
-    limit?: number,
-    o?: Array<"-published_at" | "hierarchical" | "published_at">,
-    offset?: number,
-    parentId?: string | null,
-    publishedAtAfter?: string,
-    publishedAtBefore?: string,
-    task?: string,
-    text?: string
-  ): CancelablePromise<PaginatedCommentList> {
+  public static listComments({
+    taskId,
+    author,
+    authorId,
+    ids,
+    limit,
+    o,
+    offset,
+    parentId,
+    publishedAtAfter,
+    publishedAtBefore,
+    task,
+    text,
+  }: {
+    taskId: string;
+    author?: string;
+    authorId?: string;
+    /**
+     * Filter by IDs
+     */
+    ids?: string;
+    /**
+     * Number of results to return per page.
+     */
+    limit?: number;
+    /**
+     * Ordering
+     *
+     * * `published_at` - Published At
+     * * `-published_at` - Published At (descending)
+     * * `hierarchical` - Hierarchical
+     */
+    o?: Array<"-published_at" | "hierarchical" | "published_at">;
+    /**
+     * The initial index from which to return the results.
+     */
+    offset?: number;
+    parentId?: string | null;
+    publishedAtAfter?: string;
+    publishedAtBefore?: string;
+    task?: string;
+    text?: string;
+  }): CancelablePromise<PaginatedCommentList> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/comments/list",

@@ -124,6 +124,7 @@ import tempfile
 FILES_TO_FUNCS_TO_PATCH: dict[str, list[str]] = {
     "services/DocService.ts": ["listDocs"],
     "services/TaskService.ts": ["listTasks"],
+    "services/CommentService.ts": ["listComments"],
 }
 
 
