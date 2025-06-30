@@ -4,6 +4,7 @@
 /* eslint-disable */
 import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
+import type { TaskRelationships } from "./TaskRelationships";
 export type Task = {
   /**
    * The universal, unique ID of the task.
@@ -73,4 +74,8 @@ export type Task = {
    * The custom properties, which is a dict of custom properties that are associated with the task.
    */
   customProperties?: CustomProperties | null;
+  /**
+   * The relationships associated with the task.
+   */
+  taskRelationships?: TaskRelationships | null;
 };

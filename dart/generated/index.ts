@@ -23,6 +23,7 @@ export type { PaginatedConciseTaskList } from "./models/PaginatedConciseTaskList
 export { Priority } from "./models/Priority";
 export type { Task } from "./models/Task";
 export type { TaskCreate } from "./models/TaskCreate";
+export type { TaskRelationships } from "./models/TaskRelationships";
 export type { TaskUpdate } from "./models/TaskUpdate";
 export type { User } from "./models/User";
 export type { UserSpaceConfiguration } from "./models/UserSpaceConfiguration";
