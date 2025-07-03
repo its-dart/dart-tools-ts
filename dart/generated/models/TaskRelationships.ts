@@ -4,23 +4,23 @@
 /* eslint-disable */
 export type TaskRelationships = {
   /**
-   * List of task IDs that are subtasks of this task (PARENT_OF relationship, forward direction)
+   * List of task IDs that are subtasks of this task
    */
   subtaskIds?: Array<string>;
   /**
-   * List of task IDs that block this task (BLOCKS relationship, backward direction)
+   * List of task IDs that block this task
    */
   blockerIds?: Array<string>;
   /**
-   * List of task IDs that this task blocks (BLOCKS relationship, forward direction)
+   * List of task IDs that this task blocks
    */
   blockingIds?: Array<string>;
   /**
-   * List of task IDs that are duplicates of this task (DUPLICATES relationship, both directions)
+   * List of task IDs that are duplicates of this task
    */
   duplicateIds?: Array<string>;
   /**
-   * List of task IDs that are related to this task (RELATES_TO relationship, both directions)
+   * List of task IDs that are related to this task
    */
   relatedIds?: Array<string>;
 };

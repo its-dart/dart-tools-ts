@@ -4,7 +4,6 @@
 /* eslint-disable */
 import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
-import type { TaskRelationships } from "./TaskRelationships";
 /**
  * This concise task serializer is going to be used in tasks listing view only.
  */
@@ -73,8 +72,4 @@ export type ConciseTask = {
    * The custom properties, which is a dict of custom properties that are associated with the task.
    */
   customProperties?: CustomProperties | null;
-  /**
-   * The relationships associated with the task.
-   */
-  taskRelationships?: TaskRelationships | null;
 };
