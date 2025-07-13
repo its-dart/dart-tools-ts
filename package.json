@@ -12,9 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/its-dart/dart-tools-ts.git"
   },
-  "bugs": "https://app.itsdart.com/p/r/JFyPnhL9En61",
+  "bugs": "https://app.dartai.com/p/r/JFyPnhL9En61",
   "license": "MIT",
-  "author": "Dart (software@itsdart.com)",
+  "author": "Dart (software@dartai.com)",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./index.d.ts",

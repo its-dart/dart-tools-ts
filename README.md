@@ -6,7 +6,7 @@
   </p>
 </div>
 
-[Dart](https://itsdart.com?nr=1) is Project Management powered by AI.
+[Dart](https://dartai.com?nr=1) is Project Management powered by AI.
 
 `dart-tools` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript.
 
@@ -29,7 +29,7 @@ npm i dart-tools
 
 ### Authentication of the Dart Client
 
-Visit [your Dart profile](https://app.itsdart.com/?settings=account) and save the authentication token into the `DART_TOKEN` environment variable.
+Visit [your Dart profile](https://app.dartai.com/?settings=account) and save the authentication token into the `DART_TOKEN` environment variable.
 
 ### Importing
 
@@ -66,13 +66,13 @@ const task: WrappedTask = await TaskService.createTask({
 
 ## Help and Resources
 
-- [Homepage](https://itsdart.com/?nr=1)
-- [Web App](https://app.itsdart.com/)
-- [Help Center](https://help.itsdart.com/)
-- [Bugs and Features](https://app.itsdart.com/p/r/JFyPnhL9En61)
+- [Homepage](https://dartai.com/?nr=1)
+- [Web App](https://app.dartai.com/)
+- [Help Center](https://help.dartai.com/)
+- [Bugs and Features](https://app.dartai.com/p/r/JFyPnhL9En61)
 - [Library Source](https://github.com/its-dart/dart-tools-ts/)
 - [Chat on Discord](https://discord.gg/RExv8jEkSh)
-- Email us at [support@itsdart.com](mailto:support@itsdart.com)
+- Email us at [support@dartai.com](mailto:support@dartai.com)
 
 ## Contributing
 

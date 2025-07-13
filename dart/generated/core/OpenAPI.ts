@@ -20,7 +20,7 @@ export type OpenAPIConfig = {
 };
 
 export const OpenAPI: OpenAPIConfig = {
-  BASE: `${process.env.DART_HOST ?? "https://app.itsdart.com"}/api/v0/public`,
+  BASE: `${process.env.DART_HOST ?? "https://app.dartai.com"}/api/v0/public`,
   VERSION: "1.0.0",
   WITH_CREDENTIALS: false,
   CREDENTIALS: "include",
