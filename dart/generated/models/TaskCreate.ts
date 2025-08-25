@@ -11,7 +11,7 @@ export type TaskCreate = {
    */
   title: string;
   /**
-   * The universal, unique ID of the parent task. This can be null.
+   * The universal, unique ID of the parent task. This can be null. These tasks have a parent-child relationship where the current task is the child and this task ID corresponds to the parent. Subtasks inherit context from their parent and are typically smaller units of work.
    */
   parentId?: string | null;
   /**

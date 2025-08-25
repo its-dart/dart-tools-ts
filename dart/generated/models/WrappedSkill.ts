@@ -2,7 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type User = {
-  name: string;
-  email?: string;
+import type { Skill } from "./Skill";
+export type WrappedSkill = {
+  item: Skill;
 };

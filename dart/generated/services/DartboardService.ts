@@ -9,7 +9,7 @@ import { request as __request } from "../core/request";
 export class DartboardService {
   /**
    * Retrieve an existing dartboard
-   * Retrieve an existing dartboard. This will return the dartboard's information, including the title, description, all tasks within it, and others.
+   * Retrieve an existing dartboard. This will return the dartboard's information, including the title and description.
    * @param id
    * @returns WrappedDartboard Success, including the retrieved dartboard
    * @throws ApiError

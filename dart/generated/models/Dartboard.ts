@@ -2,7 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Task } from "./Task";
 export type Dartboard = {
   /**
    * The universal, unique ID of the dartboard.
@@ -20,8 +19,4 @@ export type Dartboard = {
    * The description, which is a longer description of the dartboard.
    */
   description: string;
-  /**
-   * The list of all of the tasks in the dartboard.
-   */
-  tasks: Array<Task>;
 };

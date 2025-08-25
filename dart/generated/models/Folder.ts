@@ -2,7 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Doc } from "./Doc";
 export type Folder = {
   /**
    * The universal, unique ID of the folder.
@@ -20,8 +19,4 @@ export type Folder = {
    * The description, which is a longer description of the folder.
    */
   description: string;
-  /**
-   * The list of all of the docs in the folder.
-   */
-  docs: Array<Doc>;
 };
