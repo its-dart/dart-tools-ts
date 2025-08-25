@@ -20,9 +20,11 @@
 
 ## Deploy
 
-1. Commit and push all local changes to GitHub
-2. Run `npm login` if needed
-3. Run `yarn release` and follow the prompts (usually they are all a yes), confirming each step by pressing enter
+1. Commit and push all local changes
+2. Open but don't merge a PR and stay on the branch locally
+3. Run `npm login` if needed
+4. Run `yarn release` and follow the prompts (usually they are all a yes), confirming each step by pressing enter
+5. Merge the PR
 
 ## Dependency updating
 
