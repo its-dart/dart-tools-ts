@@ -9,7 +9,7 @@ import { request as __request } from "../core/request";
 export class ViewService {
   /**
    * Retrieve an existing view
-   * Retrieve an existing view. This will return the view's information, including the title, description, all tasks within it, and others.
+   * Retrieve an existing view. This will return the view's information, including the title, description, and others.
    * @param id
    * @returns WrappedView Success, including the retrieved view
    * @throws ApiError

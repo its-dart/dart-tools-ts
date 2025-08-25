@@ -28,7 +28,7 @@ export class CommentService {
     });
   }
   /**
-   * List all comments that the user has access to. This will return a list of comments, including the text, associated task ID, and others. Comments are ordered by thread and then by when they were written.
+   * List comments for a task with filtering options. Filter by author, text content, or date range. Sort by date or hierarchical thread order. Task ID required. Supports pagination.
    * @returns PaginatedCommentList
    * @throws ApiError
    */
@@ -69,7 +69,7 @@ export class CommentService {
      * The initial index from which to return the results.
      */
     offset?: number;
-    parentId?: string | null;
+    parentId?: string;
     publishedAtAfter?: string;
     publishedAtBefore?: string;
     task?: string;

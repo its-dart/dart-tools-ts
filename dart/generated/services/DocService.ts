@@ -92,7 +92,7 @@ export class DocService {
     });
   }
   /**
-   * List all docs that the user has access to. This will return a list of docs, including the title, folder, text and others.
+   * List docs with filtering and search capabilities. Filter by folder, title, text content, or use full-text search. Sort by creation/update date or title. Supports pagination.
    * @returns PaginatedConciseDocList
    * @throws ApiError
    */

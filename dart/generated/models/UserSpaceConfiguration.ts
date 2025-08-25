@@ -14,6 +14,7 @@ export type UserSpaceConfiguration = {
   tags: Array<string>;
   priorities: Array<string>;
   readonly sizes: string;
+  skills: Array<string>;
   readonly customProperties: Array<
     | {
         name: string;

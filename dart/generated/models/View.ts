@@ -2,7 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Task } from "./Task";
 export type View = {
   /**
    * The universal, unique ID of the view.
@@ -20,8 +19,4 @@ export type View = {
    * The description, which is a longer description of the view.
    */
   description: string;
-  /**
-   * The list of all of the tasks in the view.
-   */
-  tasks: Array<Task>;
 };

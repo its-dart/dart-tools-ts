@@ -12,7 +12,7 @@ import { request as __request } from "../core/request";
 export class TaskService {
   /**
    * Create a new task
-   * Record a new task that the user intends to do. This will save the task in Dart for later access, search, etc. By default the created task will be assigned to the user, with a status of to-do, with no parent, in the Active dartboard. More information can be included in the description.
+   * Record a new task that the user intends to do. By default the task will be assigned to the current user, have an unstarted status, have no parent, and be in the default dartboard. More information can be included in the description.
    * @param requestBody
    * @returns WrappedTask
    * @throws ApiError
@@ -89,7 +89,7 @@ export class TaskService {
     });
   }
   /**
-   * List all tasks that the user has access to. This will return a list of tasks, including the title, dartboard, status, description and others.
+   * List tasks with powerful filtering options. Filter by dartboard, status, assignee, tags, priority, dates, completion state, view, and more. Supports pagination with limit/offset.
    * @returns PaginatedConciseTaskList
    * @throws ApiError
    */
@@ -118,6 +118,8 @@ export class TaskService {
     title,
     type,
     typeId,
+    view,
+    viewId,
   }: {
     assignee?: string;
     assigneeId?: string;
@@ -152,6 +154,8 @@ export class TaskService {
     title?: string;
     type?: string;
     typeId?: string;
+    view?: string;
+    viewId?: string;
   }): CancelablePromise<PaginatedConciseTaskList> {
     return __request(OpenAPI, {
       method: "GET",
@@ -181,6 +185,8 @@ export class TaskService {
         title: title,
         type: type,
         type_id: typeId,
+        view: view,
+        view_id: viewId,
       },
     });
   }
