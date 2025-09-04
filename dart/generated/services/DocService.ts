@@ -35,7 +35,7 @@ export class DocService {
    * @returns WrappedDoc Success, including the retrieved doc
    * @throws ApiError
    */
-  public static retrieveDoc(id: string): CancelablePromise<WrappedDoc> {
+  public static getDoc(id: string): CancelablePromise<WrappedDoc> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/docs/{id}",

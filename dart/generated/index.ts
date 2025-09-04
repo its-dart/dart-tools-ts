@@ -7,6 +7,7 @@ export { CancelablePromise, CancelError } from "./core/CancelablePromise";
 export { OpenAPI } from "./core/OpenAPI";
 export type { OpenAPIConfig } from "./core/OpenAPI";
 
+export type { Attachment } from "./models/Attachment";
 export type { Comment } from "./models/Comment";
 export type { CommentCreate } from "./models/CommentCreate";
 export type { ConciseDoc } from "./models/ConciseDoc";

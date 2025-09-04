@@ -16,7 +16,7 @@ export class CommentService {
    * @returns WrappedComment Success, including the created comment
    * @throws ApiError
    */
-  public static createComment(requestBody: WrappedCommentCreate): CancelablePromise<WrappedComment> {
+  public static addTaskComment(requestBody: WrappedCommentCreate): CancelablePromise<WrappedComment> {
     return __request(OpenAPI, {
       method: "POST",
       url: "/comments",
@@ -41,6 +41,7 @@ export class CommentService {
     o,
     offset,
     parentId,
+    publishedAt,
     publishedAtAfter,
     publishedAtBefore,
     task,
@@ -70,6 +71,7 @@ export class CommentService {
      */
     offset?: number;
     parentId?: string;
+    publishedAt?: string;
     publishedAtAfter?: string;
     publishedAtBefore?: string;
     task?: string;
@@ -86,6 +88,7 @@ export class CommentService {
         o: o,
         offset: offset,
         parent_id: parentId,
+        published_at: publishedAt,
         published_at_after: publishedAtAfter,
         published_at_before: publishedAtBefore,
         task: task,

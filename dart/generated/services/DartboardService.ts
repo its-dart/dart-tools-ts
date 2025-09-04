@@ -14,7 +14,7 @@ export class DartboardService {
    * @returns WrappedDartboard Success, including the retrieved dartboard
    * @throws ApiError
    */
-  public static retrieveDartboard(id: string): CancelablePromise<WrappedDartboard> {
+  public static getDartboard(id: string): CancelablePromise<WrappedDartboard> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/dartboards/{id}",

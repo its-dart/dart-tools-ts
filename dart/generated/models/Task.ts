@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Attachment } from "./Attachment";
 import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
 import type { TaskRelationships } from "./TaskRelationships";
@@ -70,6 +71,10 @@ export type Task = {
    * The time tracking, which is a string that indicates the amount of time spent on the task in hh:mm:ss format (or an empty string if no time has been tracked).
    */
   timeTracking?: string;
+  /**
+   * The attachments, which is a list of attachments that are associated with the task.
+   */
+  attachments: Array<Attachment>;
   /**
    * The custom properties, which is a dict of custom properties that are associated with the task.
    */
