@@ -14,7 +14,7 @@ export class FolderService {
    * @returns WrappedFolder Success, including the retrieved folder
    * @throws ApiError
    */
-  public static retrieveFolder(id: string): CancelablePromise<WrappedFolder> {
+  public static getFolder(id: string): CancelablePromise<WrappedFolder> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/folders/{id}",

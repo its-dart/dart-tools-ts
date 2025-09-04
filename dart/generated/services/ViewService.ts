@@ -14,7 +14,7 @@ export class ViewService {
    * @returns WrappedView Success, including the retrieved view
    * @throws ApiError
    */
-  public static retrieveView(id: string): CancelablePromise<WrappedView> {
+  public static getView(id: string): CancelablePromise<WrappedView> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/views/{id}",

@@ -32,7 +32,7 @@ export class TaskService {
    * @returns WrappedTask Success, including the retrieved task
    * @throws ApiError
    */
-  public static retrieveTask(id: string): CancelablePromise<WrappedTask> {
+  public static getTask(id: string): CancelablePromise<WrappedTask> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/tasks/{id}",
@@ -99,6 +99,7 @@ export class TaskService {
     dartboard,
     dartboardId,
     description,
+    dueAt,
     dueAtAfter,
     dueAtBefore,
     ids,
@@ -109,6 +110,7 @@ export class TaskService {
     parentId,
     priority,
     size,
+    startAt,
     startAtAfter,
     startAtBefore,
     status,
@@ -126,6 +128,7 @@ export class TaskService {
     dartboard?: string;
     dartboardId?: string;
     description?: string;
+    dueAt?: string;
     dueAtAfter?: string;
     dueAtBefore?: string;
     /**
@@ -145,6 +148,7 @@ export class TaskService {
     parentId?: string;
     priority?: string;
     size?: number;
+    startAt?: string;
     startAtAfter?: string;
     startAtBefore?: string;
     status?: string;
@@ -166,6 +170,7 @@ export class TaskService {
         dartboard: dartboard,
         dartboard_id: dartboardId,
         description: description,
+        due_at: dueAt,
         due_at_after: dueAtAfter,
         due_at_before: dueAtBefore,
         ids: ids,
@@ -176,6 +181,7 @@ export class TaskService {
         parent_id: parentId,
         priority: priority,
         size: size,
+        start_at: startAt,
         start_at_after: startAtAfter,
         start_at_before: startAtBefore,
         status: status,
