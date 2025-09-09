@@ -8,6 +8,7 @@ export { OpenAPI } from "./core/OpenAPI";
 export type { OpenAPIConfig } from "./core/OpenAPI";
 
 export type { Attachment } from "./models/Attachment";
+export type { AttachmentCreateFromUrl } from "./models/AttachmentCreateFromUrl";
 export type { Comment } from "./models/Comment";
 export type { CommentCreate } from "./models/CommentCreate";
 export type { ConciseDoc } from "./models/ConciseDoc";
@@ -47,6 +48,7 @@ export type { WrappedTaskCreate } from "./models/WrappedTaskCreate";
 export type { WrappedTaskUpdate } from "./models/WrappedTaskUpdate";
 export type { WrappedView } from "./models/WrappedView";
 
+export { AttachmentService } from "./services/AttachmentService";
 export { CommentService } from "./services/CommentService";
 export { ConfigService } from "./services/ConfigService";
 export { DartboardService } from "./services/DartboardService";
