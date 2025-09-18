@@ -106,6 +106,8 @@ export class TaskService {
     inTrash,
     isCompleted,
     limit,
+    noDefaults = false,
+    o,
     offset,
     parentId,
     priority,
@@ -142,6 +144,36 @@ export class TaskService {
      */
     limit?: number;
     /**
+     * Controls whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
+     */
+    noDefaults?: boolean;
+    /**
+     * Ordering
+     *
+     * * `dartboard__order` - Dartboard order
+     * * `-dartboard__order` - Dartboard order (desc)
+     * * `order` - Order
+     * * `-order` - Order (desc)
+     * * `created_at` - Created
+     * * `-created_at` - Created (desc)
+     * * `updated_at` - Updated
+     * * `-updated_at` - Updated (desc)
+     * * `title` - Title
+     * * `-title` - Title (desc)
+     */
+    o?: Array<
+      | "-created_at"
+      | "-dartboard__order"
+      | "-order"
+      | "-title"
+      | "-updated_at"
+      | "created_at"
+      | "dartboard__order"
+      | "order"
+      | "title"
+      | "updated_at"
+    >;
+    /**
      * The initial index from which to return the results.
      */
     offset?: number;
@@ -177,6 +209,8 @@ export class TaskService {
         in_trash: inTrash,
         is_completed: isCompleted,
         limit: limit,
+        no_defaults: noDefaults,
+        o: o,
         offset: offset,
         parent_id: parentId,
         priority: priority,

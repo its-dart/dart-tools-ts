@@ -97,17 +97,20 @@ export class DocService {
    * @throws ApiError
    */
   public static listDocs({
+    editor,
     folder,
     folderId,
     ids,
     inTrash,
     limit,
+    noDefaults = false,
     o,
     offset,
     s,
     text,
     title,
   }: {
+    editor?: string;
     folder?: string;
     folderId?: string;
     /**
@@ -120,18 +123,35 @@ export class DocService {
      */
     limit?: number;
     /**
+     * Controls whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
+     */
+    noDefaults?: boolean;
+    /**
      * Ordering
      *
+     * * `folder__order` - Folder order
+     * * `-folder__order` - Folder order (desc)
      * * `order` - Order
-     * * `-order` - Order (descending)
-     * * `created_at` - Created at
-     * * `-created_at` - Created at (descending)
-     * * `updated_at` - Updated at
-     * * `-updated_at` - Updated at (descending)
+     * * `-order` - Order (desc)
+     * * `created_at` - Created
+     * * `-created_at` - Created (desc)
+     * * `updated_at` - Updated
+     * * `-updated_at` - Updated (desc)
      * * `title` - Title
-     * * `-title` - Title (descending)
+     * * `-title` - Title (desc)
      */
-    o?: Array<"-created_at" | "-order" | "-title" | "-updated_at" | "created_at" | "order" | "title" | "updated_at">;
+    o?: Array<
+      | "-created_at"
+      | "-folder__order"
+      | "-order"
+      | "-title"
+      | "-updated_at"
+      | "created_at"
+      | "folder__order"
+      | "order"
+      | "title"
+      | "updated_at"
+    >;
     /**
      * The initial index from which to return the results.
      */
@@ -147,11 +167,13 @@ export class DocService {
       method: "GET",
       url: "/docs/list",
       query: {
+        editor: editor,
         folder: folder,
         folder_id: folderId,
         ids: ids,
         in_trash: inTrash,
         limit: limit,
+        no_defaults: noDefaults,
         o: o,
         offset: offset,
         s: s,
