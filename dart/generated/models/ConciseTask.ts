@@ -72,4 +72,20 @@ export type ConciseTask = {
    * The custom properties, which is a dict of custom properties that are associated with the task.
    */
   customProperties?: CustomProperties | null;
+  /**
+   * The name or email (moniker) of the user that created the task.
+   */
+  createdBy?: string | null;
+  /**
+   * The date and time when the task was created in ISO format.
+   */
+  createdAt: string;
+  /**
+   * The name or email (moniker) of the user that last updated the task.
+   */
+  updatedBy?: string | null;
+  /**
+   * The date and time when the task was last updated in ISO format.
+   */
+  updatedAt: string;
 };

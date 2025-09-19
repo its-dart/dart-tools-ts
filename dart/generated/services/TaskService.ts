@@ -96,6 +96,11 @@ export class TaskService {
   public static listTasks({
     assignee,
     assigneeId,
+    createdAt,
+    createdAtAfter,
+    createdAtBefore,
+    createdBy,
+    createdById,
     dartboard,
     dartboardId,
     description,
@@ -122,11 +127,21 @@ export class TaskService {
     title,
     type,
     typeId,
+    updatedAt,
+    updatedAtAfter,
+    updatedAtBefore,
+    updatedBy,
+    updatedById,
     view,
     viewId,
   }: {
     assignee?: string;
     assigneeId?: string;
+    createdAt?: string;
+    createdAtAfter?: string;
+    createdAtBefore?: string;
+    createdBy?: string;
+    createdById?: string;
     dartboard?: string;
     dartboardId?: string;
     description?: string;
@@ -190,6 +205,11 @@ export class TaskService {
     title?: string;
     type?: string;
     typeId?: string;
+    updatedAt?: string;
+    updatedAtAfter?: string;
+    updatedAtBefore?: string;
+    updatedBy?: string;
+    updatedById?: string;
     view?: string;
     viewId?: string;
   }): CancelablePromise<PaginatedConciseTaskList> {
@@ -199,6 +219,11 @@ export class TaskService {
       query: {
         assignee: assignee,
         assignee_id: assigneeId,
+        created_at: createdAt,
+        created_at_after: createdAtAfter,
+        created_at_before: createdAtBefore,
+        created_by: createdBy,
+        created_by_id: createdById,
         dartboard: dartboard,
         dartboard_id: dartboardId,
         description: description,
@@ -225,6 +250,11 @@ export class TaskService {
         title: title,
         type: type,
         type_id: typeId,
+        updated_at: updatedAt,
+        updated_at_after: updatedAtAfter,
+        updated_at_before: updatedAtBefore,
+        updated_by: updatedBy,
+        updated_by_id: updatedById,
         view: view,
         view_id: viewId,
       },
