@@ -96,6 +96,11 @@ export class TaskService {
   public static listTasks({
     assignee,
     assigneeId,
+    createdAt,
+    createdAtAfter,
+    createdAtBefore,
+    createdBy,
+    createdById,
     dartboard,
     dartboardId,
     description,
@@ -106,6 +111,8 @@ export class TaskService {
     inTrash,
     isCompleted,
     limit,
+    noDefaults = false,
+    o,
     offset,
     parentId,
     priority,
@@ -120,11 +127,21 @@ export class TaskService {
     title,
     type,
     typeId,
+    updatedAt,
+    updatedAtAfter,
+    updatedAtBefore,
+    updatedBy,
+    updatedById,
     view,
     viewId,
   }: {
     assignee?: string;
     assigneeId?: string;
+    createdAt?: string;
+    createdAtAfter?: string;
+    createdAtBefore?: string;
+    createdBy?: string;
+    createdById?: string;
     dartboard?: string;
     dartboardId?: string;
     description?: string;
@@ -142,6 +159,36 @@ export class TaskService {
      */
     limit?: number;
     /**
+     * Controls whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
+     */
+    noDefaults?: boolean;
+    /**
+     * Ordering
+     *
+     * * `dartboard__order` - Dartboard order
+     * * `-dartboard__order` - Dartboard order (desc)
+     * * `order` - Order
+     * * `-order` - Order (desc)
+     * * `created_at` - Created
+     * * `-created_at` - Created (desc)
+     * * `updated_at` - Updated
+     * * `-updated_at` - Updated (desc)
+     * * `title` - Title
+     * * `-title` - Title (desc)
+     */
+    o?: Array<
+      | "-created_at"
+      | "-dartboard__order"
+      | "-order"
+      | "-title"
+      | "-updated_at"
+      | "created_at"
+      | "dartboard__order"
+      | "order"
+      | "title"
+      | "updated_at"
+    >;
+    /**
      * The initial index from which to return the results.
      */
     offset?: number;
@@ -158,6 +205,11 @@ export class TaskService {
     title?: string;
     type?: string;
     typeId?: string;
+    updatedAt?: string;
+    updatedAtAfter?: string;
+    updatedAtBefore?: string;
+    updatedBy?: string;
+    updatedById?: string;
     view?: string;
     viewId?: string;
   }): CancelablePromise<PaginatedConciseTaskList> {
@@ -167,6 +219,11 @@ export class TaskService {
       query: {
         assignee: assignee,
         assignee_id: assigneeId,
+        created_at: createdAt,
+        created_at_after: createdAtAfter,
+        created_at_before: createdAtBefore,
+        created_by: createdBy,
+        created_by_id: createdById,
         dartboard: dartboard,
         dartboard_id: dartboardId,
         description: description,
@@ -177,6 +234,8 @@ export class TaskService {
         in_trash: inTrash,
         is_completed: isCompleted,
         limit: limit,
+        no_defaults: noDefaults,
+        o: o,
         offset: offset,
         parent_id: parentId,
         priority: priority,
@@ -191,6 +250,11 @@ export class TaskService {
         title: title,
         type: type,
         type_id: typeId,
+        updated_at: updatedAt,
+        updated_at_after: updatedAtAfter,
+        updated_at_before: updatedAtBefore,
+        updated_by: updatedBy,
+        updated_by_id: updatedById,
         view: view,
         view_id: viewId,
       },
