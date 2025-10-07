@@ -1,5 +1,6 @@
 // Get all critical tasks
-import { TaskService, PaginatedConciseTaskList, WrappedTask } from "dart-tools";
+import { PaginatedConciseTaskList, Priority, TaskService, WrappedTask } from "dart-tools";
+
 const tasks: PaginatedConciseTaskList = await TaskService.listTasks({
   priority: "Critical",
 });
@@ -16,7 +17,7 @@ if (tasks.results.length) {
 const task: WrappedTask = await TaskService.createTask({
   item: {
     title: "Update the landing page",
-    priority: "Critical",
+    priority: Priority.CRITICAL,
   },
 });
 console.log("Create task details:");

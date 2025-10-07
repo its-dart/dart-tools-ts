@@ -8,7 +8,7 @@
 
 [Dart](https://dartai.com?nr=1) is Project Management powered by AI.
 
-`dart-tools` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript.
+`dart-tools` is the Dart TypeScript/JavaScript Library. It enables direct integration with Dart through TypeScript or JavaScript. It implements client functions to the [Dart Public API](https://app.dartai.com/api/v0/public/docs/).
 
 - [Installation](#installation)
 - [Usage](#usage)
