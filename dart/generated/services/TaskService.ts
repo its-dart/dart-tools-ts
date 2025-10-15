@@ -3,6 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { PaginatedConciseTaskList } from "../models/PaginatedConciseTaskList";
+import type { TaskMove } from "../models/TaskMove";
+import type { TaskTimeTrackingCreate } from "../models/TaskTimeTrackingCreate";
 import type { WrappedTask } from "../models/WrappedTask";
 import type { WrappedTaskCreate } from "../models/WrappedTaskCreate";
 import type { WrappedTaskUpdate } from "../models/WrappedTaskUpdate";
@@ -85,6 +87,50 @@ export class TaskService {
       errors: {
         400: `Invalid request, including the errors`,
         404: `Task not found, including the errors`,
+      },
+    });
+  }
+  /**
+   * Move a task within its dartboard
+   * Move a task to a specific position within its dartboard ordering and return the updated task.
+   * @param id
+   * @param requestBody
+   * @returns WrappedTask Success, including the updated task with its new ordering
+   * @throws ApiError
+   */
+  public static moveTask(id: string, requestBody?: TaskMove): CancelablePromise<WrappedTask> {
+    return __request(OpenAPI, {
+      method: "POST",
+      url: "/tasks/{id}/move",
+      path: {
+        id: id,
+      },
+      body: requestBody,
+      mediaType: "application/json",
+      errors: {
+        400: `Invalid request, including the errors`,
+      },
+    });
+  }
+  /**
+   * Add a time tracking entry to a task
+   * Record an additional time tracking entry on a task and return the updated task with refreshed time tracking.
+   * @param id
+   * @param requestBody
+   * @returns WrappedTask Success, including the updated task with refreshed time tracking
+   * @throws ApiError
+   */
+  public static addTaskTimeTracking(id: string, requestBody: TaskTimeTrackingCreate): CancelablePromise<WrappedTask> {
+    return __request(OpenAPI, {
+      method: "POST",
+      url: "/tasks/{id}/time-tracking",
+      path: {
+        id: id,
+      },
+      body: requestBody,
+      mediaType: "application/json",
+      errors: {
+        400: `Invalid request, including the errors`,
       },
     });
   }
