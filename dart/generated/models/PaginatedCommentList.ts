@@ -8,4 +8,22 @@ export type PaginatedCommentList = {
   next?: string | null;
   previous?: string | null;
   results: Array<Comment>;
+  meta?: {
+    /**
+     * Whether default filters or ordering were applied to the response.
+     */
+    defaultsApplied?: boolean;
+    /**
+     * The default filters that were applied automatically, if any.
+     */
+    appliedDefaultFilters?: Record<string, string>;
+    /**
+     * The default ordering fields that were applied automatically, if any.
+     */
+    appliedDefaultSorts?: Array<string>;
+    /**
+     * Guidance on how to disable or override default filters and ordering.
+     */
+    instructions?: string;
+  } | null;
 };
