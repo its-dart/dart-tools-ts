@@ -4,11 +4,11 @@
 /* eslint-disable */
 export type TaskMove = {
   /**
-   * Move the task to immediately before the provided task ID. Use null to move the task to the beginning of the dartboard.
+   * Move the task immediately before this task. For example: if tasks are [A, B, C], then beforeTaskId=B produces [A, moved_task, B, C]. Use null to move to the beginning (first position).
    */
-  insertBeforeId?: string | null;
+  beforeTaskId?: string | null;
   /**
-   * Move the task to immediately after the provided task ID. Use null to move the task to the end of the dartboard.
+   * Move the task immediately after this task. For example: if tasks are [A, B, C], then afterTaskId=B produces [A, B, moved_task, C]. Use null to move to the end (last position).
    */
-  insertAfterId?: string | null;
+  afterTaskId?: string | null;
 };

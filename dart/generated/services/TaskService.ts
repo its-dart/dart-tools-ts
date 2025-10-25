@@ -92,7 +92,7 @@ export class TaskService {
   }
   /**
    * Move a task within its dartboard
-   * Move a task to a specific position within its dartboard ordering and return the updated task.
+   * Move a task to a specific position within results sorted by the order field. Use afterTaskId to place the task after a specific task, or beforeTaskId to place it before one.
    * @param id
    * @param requestBody
    * @returns WrappedTask Success, including the updated task with its new ordering
