@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { ViewId } from "./ViewId";
 export type View = {
-  /**
-   * The universal, unique ID of the view.
-   */
-  id: string;
+  id: ViewId;
   /**
    * The URL that can be used to open the view in the Dart web UI.
    */

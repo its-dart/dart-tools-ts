@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { DocId } from "./DocId";
 export type Doc = {
-  /**
-   * The universal, unique ID of the doc.
-   */
-  id: string;
+  id: DocId;
   /**
    * The URL that can be used to open the doc in the Dart web UI.
    */

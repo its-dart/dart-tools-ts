@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { DartboardId } from "./DartboardId";
 export type Dartboard = {
-  /**
-   * The universal, unique ID of the dartboard.
-   */
-  id: string;
+  id: DartboardId;
   /**
    * The URL that can be used to open the dartboard in the Dart web UI.
    */

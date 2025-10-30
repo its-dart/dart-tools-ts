@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { SkillId } from "./SkillId";
 export type Skill = {
-  /**
-   * The universal, unique ID of the skill.
-   */
-  id: string;
+  id: SkillId;
   /**
    * The title of the skill, describing the task type.
    */

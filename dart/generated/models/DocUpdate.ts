@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { DocId } from "./DocId";
 export type DocUpdate = {
-  /**
-   * The universal, unique ID of the doc.
-   */
-  id: string;
+  id: DocId;
   /**
    * The title, which is a short description of the doc.
    */

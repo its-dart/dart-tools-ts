@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { CommentId } from "./CommentId";
 export type Comment = {
-  /**
-   * The universal, unique ID of the comment.
-   */
-  id: string;
+  id: CommentId;
   /**
    * The universal, unique ID of the parent comment, if any.
    */

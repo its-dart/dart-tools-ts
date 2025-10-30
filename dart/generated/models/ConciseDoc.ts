@@ -2,14 +2,12 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { DocId } from "./DocId";
 /**
  * This concise doc serializer is going to be used in docs listing view only.
  */
 export type ConciseDoc = {
-  /**
-   * The universal, unique ID of the doc.
-   */
-  id: string;
+  id: DocId;
   /**
    * The URL that can be used to open the doc in the Dart web UI.
    */
