@@ -4,14 +4,12 @@
 /* eslint-disable */
 import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
+import type { TaskId } from "./TaskId";
 /**
  * This concise task serializer is going to be used in tasks listing view only.
  */
 export type ConciseTask = {
-  /**
-   * The universal, unique ID of the task.
-   */
-  id: string;
+  id: TaskId;
   /**
    * The URL that can be used to open the task in the Dart web UI.
    */
@@ -23,7 +21,7 @@ export type ConciseTask = {
   /**
    * The universal, unique ID of the parent task. This can be null. These tasks have a parent-child relationship where the current task is the child and this task ID corresponds to the parent. Subtasks inherit context from their parent and are typically smaller units of work.
    */
-  parentId: string | null;
+  parentId: TaskId | null;
   /**
    * The full title of the dartboard, which is a project or list of tasks.
    */

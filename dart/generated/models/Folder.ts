@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { FolderId } from "./FolderId";
 export type Folder = {
-  /**
-   * The universal, unique ID of the folder.
-   */
-  id: string;
+  id: FolderId;
   /**
    * The URL that can be used to open the folder in the Dart web UI.
    */

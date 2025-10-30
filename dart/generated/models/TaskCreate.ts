@@ -4,6 +4,7 @@
 /* eslint-disable */
 import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
+import type { TaskId } from "./TaskId";
 import type { TaskRelationships } from "./TaskRelationships";
 export type TaskCreate = {
   /**
@@ -13,7 +14,7 @@ export type TaskCreate = {
   /**
    * The universal, unique ID of the parent task. This can be null. These tasks have a parent-child relationship where the current task is the child and this task ID corresponds to the parent. Subtasks inherit context from their parent and are typically smaller units of work.
    */
-  parentId?: string | null;
+  parentId?: TaskId | null;
   /**
    * The full title of the dartboard, which is a project or list of tasks.
    */
