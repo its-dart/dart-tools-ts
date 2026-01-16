@@ -2,7 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
 import type { TaskId } from "./TaskId";
 /**
@@ -67,9 +66,9 @@ export type ConciseTask = {
    */
   timeTracking?: string;
   /**
-   * The custom properties, which is a dict of custom properties that are associated with the task.
+   * Custom properties as a dict mapping property NAME to value. Use exact property names from workspace config (e.g., {"customCheckboxProperty": true, "customTextProperty": "Some text"}). Property names are case-sensitive.
    */
-  customProperties?: CustomProperties | null;
+  customProperties?: any | null;
   /**
    * The name or email (moniker) of the user that created the task.
    */

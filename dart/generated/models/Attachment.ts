@@ -11,4 +11,8 @@ export type Attachment = {
    * The link to access the attachment.
    */
   url: string;
+  /**
+   * The MIME type of the attachment
+   */
+  kind: string;
 };
