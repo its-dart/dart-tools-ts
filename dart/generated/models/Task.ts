@@ -3,7 +3,6 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { Attachment } from "./Attachment";
-import type { CustomProperties } from "./CustomProperties";
 import type { Priority } from "./Priority";
 import type { TaskId } from "./TaskId";
 import type { TaskRelationships } from "./TaskRelationships";
@@ -74,9 +73,9 @@ export type Task = {
    */
   attachments: Array<Attachment>;
   /**
-   * The custom properties, which is a dict of custom properties that are associated with the task.
+   * Custom properties as a dict mapping property NAME to value. Use exact property names from workspace config (e.g., {"customCheckboxProperty": true, "customTextProperty": "Some text"}). Property names are case-sensitive.
    */
-  customProperties?: CustomProperties | null;
+  customProperties?: any | null;
   /**
    * The relationships associated with the task.
    */

@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Attachment } from "./Attachment";
 import type { SkillId } from "./SkillId";
 export type Skill = {
   id: SkillId;
@@ -13,4 +14,8 @@ export type Skill = {
    * User-defined instructions for performing this skill in markdown format.
    */
   promptMarkdown: string;
+  /**
+   * Attachments linked to the skill, including their accessible URLs.
+   */
+  attachments: Array<Attachment>;
 };

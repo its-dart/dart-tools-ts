@@ -49,7 +49,7 @@ export class TaskService {
   }
   /**
    * Update an existing task
-   * Update certain properties of an existing task. This will save the task in Dart for later access, search, etc. Any properties that are not specified will not be changed.
+   * Update properties of an existing task. For customProperties, use property NAME (not ID) as key. Get property names from workspace config. Example: {"customTextProperty": "Some text"}. Fields not provided are unchanged.
    * @param id
    * @param requestBody
    * @returns WrappedTask Success, including the updated task

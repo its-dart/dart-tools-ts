@@ -14,7 +14,6 @@ export type { CommentCreate } from "./models/CommentCreate";
 export type { CommentId } from "./models/CommentId";
 export type { ConciseDoc } from "./models/ConciseDoc";
 export type { ConciseTask } from "./models/ConciseTask";
-export type { CustomProperties } from "./models/CustomProperties";
 export type { Dartboard } from "./models/Dartboard";
 export type { DartboardId } from "./models/DartboardId";
 export type { DateRange } from "./models/DateRange";

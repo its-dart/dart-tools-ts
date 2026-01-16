@@ -38,6 +38,11 @@ export type UserSpaceConfiguration = {
     | {
         name: string;
         type: string;
+        statuses?: Array<string>;
+      }
+    | {
+        name: string;
+        type: string;
         isMultiple: boolean;
       }
   >;
