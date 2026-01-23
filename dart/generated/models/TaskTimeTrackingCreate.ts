@@ -15,4 +15,8 @@ export type TaskTimeTrackingCreate = {
    * The end timestamp for the tracked time entry in ISO 8601 format. Must be after the start time.
    */
   finishedAt: string;
+  /**
+   * The time tracking custom property name listed in config customProperties. Must be a time tracking type. If omitted, defaults to the main time tracking property.
+   */
+  customPropertyName?: string | null;
 };
