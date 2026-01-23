@@ -123,7 +123,7 @@ export class DocService {
      */
     limit?: number;
     /**
-     * Controls whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
+     * Whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
      */
     noDefaults?: boolean;
     /**
