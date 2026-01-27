@@ -1,6 +1,6 @@
 {
   "name": "dart-tools",
-  "version": "0.5.0",
+  "version": "0.4.10",
   "description": "The Dart TypeScript/JavaScript client",
   "keywords": [
     "dart",
