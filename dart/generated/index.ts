@@ -23,6 +23,7 @@ export type { DocId } from "./models/DocId";
 export type { DocUpdate } from "./models/DocUpdate";
 export type { Folder } from "./models/Folder";
 export type { FolderId } from "./models/FolderId";
+export type { HelpCenterArticle } from "./models/HelpCenterArticle";
 export type { PaginatedCommentList } from "./models/PaginatedCommentList";
 export type { PaginatedConciseDocList } from "./models/PaginatedConciseDocList";
 export type { PaginatedConciseTaskList } from "./models/PaginatedConciseTaskList";

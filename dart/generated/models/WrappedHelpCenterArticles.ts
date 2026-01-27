@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { HelpCenterArticle } from "./HelpCenterArticle";
 export type WrappedHelpCenterArticles = {
-  items: Array<string>;
+  items: Array<HelpCenterArticle>;
 };
