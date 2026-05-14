@@ -45,6 +45,14 @@ export type Task = {
    */
   assignee?: string | null;
   /**
+   * The names or emails of the users that are reviewing the task. Either this or reviewer must be included, depending on whether the workspace allows multiple reviewers or not.
+   */
+  reviewers?: any[] | null;
+  /**
+   * The name or email of the user that is reviewing the task. Either this or reviewers must be included, depending on whether the workspace allows multiple reviewers or not.
+   */
+  reviewer?: string | null;
+  /**
    * Any tags that should be applied to the task, which can be used to filter and search for tasks. Tags are also known as labels or components and are strings that can be anything, but should be short and descriptive. This list can be empty.
    */
   tags?: Array<string>;
@@ -96,4 +104,8 @@ export type Task = {
    * The date and time when the task was last updated in ISO format.
    */
   updatedAt: string;
+  /**
+   * The date and time when the task was completed in ISO format. Null if the task is not completed.
+   */
+  completedAt: string | null;
 };
