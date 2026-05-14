@@ -142,6 +142,9 @@ export class TaskService {
   public static listTasks({
     assignee,
     assigneeId,
+    completedAt,
+    completedAtAfter,
+    completedAtBefore,
     createdAt,
     createdAtAfter,
     createdAtBefore,
@@ -162,6 +165,8 @@ export class TaskService {
     offset,
     parentId,
     priority,
+    reviewer,
+    reviewerId,
     size,
     startAt,
     startAtAfter,
@@ -183,6 +188,9 @@ export class TaskService {
   }: {
     assignee?: string;
     assigneeId?: string;
+    completedAt?: string;
+    completedAtAfter?: string;
+    completedAtBefore?: string;
     createdAt?: string;
     createdAtAfter?: string;
     createdAtBefore?: string;
@@ -219,15 +227,19 @@ export class TaskService {
      * * `-created_at` - Created (desc)
      * * `updated_at` - Updated
      * * `-updated_at` - Updated (desc)
+     * * `completed_at` - Completed
+     * * `-completed_at` - Completed (desc)
      * * `title` - Title
      * * `-title` - Title (desc)
      */
     o?: Array<
+      | "-completed_at"
       | "-created_at"
       | "-dartboard__order"
       | "-order"
       | "-title"
       | "-updated_at"
+      | "completed_at"
       | "created_at"
       | "dartboard__order"
       | "order"
@@ -240,6 +252,8 @@ export class TaskService {
     offset?: number;
     parentId?: string;
     priority?: string;
+    reviewer?: string;
+    reviewerId?: string;
     size?: number;
     startAt?: string;
     startAtAfter?: string;
@@ -265,6 +279,9 @@ export class TaskService {
       query: {
         assignee: assignee,
         assignee_id: assigneeId,
+        completed_at: completedAt,
+        completed_at_after: completedAtAfter,
+        completed_at_before: completedAtBefore,
         created_at: createdAt,
         created_at_after: createdAtAfter,
         created_at_before: createdAtBefore,
@@ -285,6 +302,8 @@ export class TaskService {
         offset: offset,
         parent_id: parentId,
         priority: priority,
+        reviewer: reviewer,
+        reviewer_id: reviewerId,
         size: size,
         start_at: startAt,
         start_at_after: startAtAfter,

@@ -11,8 +11,8 @@ import { OpenAPI } from "../core/OpenAPI";
 import { request as __request } from "../core/request";
 export class AgentService {
   /**
-   * Create a new custom agent
-   * Create a new custom agent in the workspace with a name and optional description or instructions.
+   * Create a new agent
+   * Create a new agent in the workspace with a name and optional description or instructions.
    * @param requestBody
    * @returns WrappedAgent Success, including the created agent
    * @throws ApiError
@@ -29,8 +29,8 @@ export class AgentService {
     });
   }
   /**
-   * Retrieve an existing custom agent
-   * Retrieve an existing custom agent by its ID, including its name and current description or instructions.
+   * Retrieve an existing agent
+   * Retrieve an existing agent by its ID, including its name and current description or instructions.
    * @param id
    * @returns WrappedAgent Success, including the retrieved agent
    * @throws ApiError
@@ -48,8 +48,8 @@ export class AgentService {
     });
   }
   /**
-   * Update a custom agent
-   * Update a custom agent's name and/or description. Only the fields provided will be changed. The agent is identified by its ID in the URL.
+   * Update an agent
+   * Update an agent's name and/or description. Only the fields provided will be changed. The agent is identified by its ID in the URL.
    * @param id
    * @param requestBody
    * @returns WrappedAgent Success, including the updated agent
@@ -71,8 +71,8 @@ export class AgentService {
     });
   }
   /**
-   * Delete a custom agent
-   * Delete a custom agent by its ID.
+   * Delete an agent
+   * Delete an agent by its ID.
    * @param id
    * @returns WrappedAgent Success, including the deleted agent
    * @throws ApiError
@@ -90,8 +90,8 @@ export class AgentService {
     });
   }
   /**
-   * List all custom agents
-   * List all custom agents in the workspace. Agents are AI assistants that can be assigned tasks and have customizable instructions.
+   * List all agents
+   * List all agents in the workspace. Agents are AI assistants that can be assigned tasks and have customizable instructions.
    * @param limit Number of results to return per page.
    * @param offset The initial index from which to return the results.
    * @returns PaginatedAgentList Success, including a list of agents

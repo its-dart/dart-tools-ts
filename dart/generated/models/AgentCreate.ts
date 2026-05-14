@@ -2,13 +2,29 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AgentExecutionMode } from "./AgentExecutionMode";
+import type { AgentForwarding } from "./AgentForwarding";
+import type { AgentInstructions } from "./AgentInstructions";
+import type { AgentLocal } from "./AgentLocal";
 export type AgentCreate = {
   /**
    * The display name of the new agent.
    */
   name: string;
   /**
-   * Initial instructions for the agent in markdown format.
+   * How the agent runs when triggered.
    */
-  promptMarkdown?: string;
+  executionMode?: AgentExecutionMode;
+  /**
+   * Instructions-mode configuration.
+   */
+  instructions?: AgentInstructions;
+  /**
+   * Forwarding-mode configuration.
+   */
+  forwarding?: AgentForwarding;
+  /**
+   * Local-mode configuration.
+   */
+  local?: AgentLocal;
 };

@@ -2,7 +2,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AgentExecutionMode } from "./AgentExecutionMode";
+import type { AgentForwarding } from "./AgentForwarding";
 import type { AgentId } from "./AgentId";
+import type { AgentInstructions } from "./AgentInstructions";
+import type { AgentLocal } from "./AgentLocal";
 export type Agent = {
   /**
    * The unique ID of the agent.
@@ -17,7 +21,19 @@ export type Agent = {
    */
   readonly enabled: boolean;
   /**
-   * The agent's instructions in markdown format.
+   * How the agent runs when triggered.
    */
-  promptMarkdown: string;
+  readonly executionMode: AgentExecutionMode;
+  /**
+   * Instructions-mode configuration.
+   */
+  readonly instructions: AgentInstructions;
+  /**
+   * Forwarding-mode configuration.
+   */
+  readonly forwarding: AgentForwarding;
+  /**
+   * Local-mode configuration.
+   */
+  readonly local: AgentLocal;
 };
