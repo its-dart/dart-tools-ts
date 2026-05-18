@@ -1,0 +1,9 @@
+{
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "web": true
+  }
+}
