@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { DocTextUpdate } from "../models/DocTextUpdate";
 import type { PaginatedConciseDocList } from "../models/PaginatedConciseDocList";
 import type { WrappedDoc } from "../models/WrappedDoc";
 import type { WrappedDocCreate } from "../models/WrappedDocCreate";
@@ -85,6 +86,29 @@ export class DocService {
       path: {
         id: id,
       },
+      errors: {
+        400: `Invalid request, including the errors`,
+        404: `Doc not found, including the errors`,
+      },
+    });
+  }
+  /**
+   * Update a doc's text content with text updates
+   * Apply targeted text updates to a doc's content; use instead of updateDoc when only the text body changes. Each update is one of: "replace" (swap oldText for newText), "insert_before" / "insert_after" (insert newText relative to anchorText), or "delete" (remove oldText), applied in order and atomically. When occurrence is omitted, the target text must be unique; otherwise specify occurrence (1-indexed). Preferred over a full update for long content: fewer tokens, and no risk of rewriting unrelated text.
+   * @param id
+   * @param requestBody
+   * @returns WrappedDoc Success, including the updated doc
+   * @throws ApiError
+   */
+  public static updateDocText(id: string, requestBody: DocTextUpdate): CancelablePromise<WrappedDoc> {
+    return __request(OpenAPI, {
+      method: "POST",
+      url: "/docs/{id}/update-text",
+      path: {
+        id: id,
+      },
+      body: requestBody,
+      mediaType: "application/json",
       errors: {
         400: `Invalid request, including the errors`,
         404: `Doc not found, including the errors`,

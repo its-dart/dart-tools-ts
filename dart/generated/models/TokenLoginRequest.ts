@@ -2,8 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type TimeTrackingEntry = {
-  userId: string;
-  startedAt: string;
-  finishedAt: string | null;
+export type TokenLoginRequest = {
+  token: string;
 };

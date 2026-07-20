@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { PaginatedConciseTaskList } from "../models/PaginatedConciseTaskList";
+import type { TaskDescriptionUpdate } from "../models/TaskDescriptionUpdate";
 import type { TaskMove } from "../models/TaskMove";
 import type { TaskTimeTrackingCreate } from "../models/TaskTimeTrackingCreate";
 import type { WrappedTask } from "../models/WrappedTask";
@@ -131,6 +132,29 @@ export class TaskService {
       mediaType: "application/json",
       errors: {
         400: `Invalid request, including the errors`,
+      },
+    });
+  }
+  /**
+   * Update a task's description with text updates
+   * Apply targeted text updates to a task's description; use instead of updateTask when only the description changes. Each update is one of: "replace" (swap oldText for newText), "insert_before" / "insert_after" (insert newText relative to anchorText), or "delete" (remove oldText), applied in order and atomically. When occurrence is omitted, the target text must be unique; otherwise specify occurrence (1-indexed). Preferred over a full update for long content: fewer tokens, and no risk of rewriting unrelated text.
+   * @param id
+   * @param requestBody
+   * @returns WrappedTask Success, including the updated task
+   * @throws ApiError
+   */
+  public static updateTaskDescription(id: string, requestBody: TaskDescriptionUpdate): CancelablePromise<WrappedTask> {
+    return __request(OpenAPI, {
+      method: "POST",
+      url: "/tasks/{id}/update-description",
+      path: {
+        id: id,
+      },
+      body: requestBody,
+      mediaType: "application/json",
+      errors: {
+        400: `Invalid request, including the errors`,
+        404: `Task not found, including the errors`,
       },
     });
   }
