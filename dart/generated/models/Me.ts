@@ -2,8 +2,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type TimeTrackingEntry = {
-  userId: string;
-  startedAt: string;
-  finishedAt: string | null;
+import type { AuthenticatedUser } from "./AuthenticatedUser";
+export type Me = {
+  isLoggedIn: boolean;
+  user: AuthenticatedUser;
 };
