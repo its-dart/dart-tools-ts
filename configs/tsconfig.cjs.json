@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationMap": false,
-    "module": "commonjs",
+    "module": "Node16",
     "outDir": "../dist",
     "sourceMap": true
   }

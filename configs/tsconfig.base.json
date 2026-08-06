@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "es2018",
     "lib": ["esnext", "dom"],
-    "moduleResolution": "node",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "rootDir": "../dart/generated",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strict": true,
@@ -13,7 +15,6 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "downlevelIteration": true,
     "isolatedModules": true,
     "types": ["parse-path"]
   },

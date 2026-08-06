@@ -4,6 +4,7 @@
     "declaration": false,
     "declarationMap": false,
     "module": "es2015",
+    "moduleResolution": "Bundler",
     "sourceMap": false
   }
 }
