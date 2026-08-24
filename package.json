@@ -60,6 +60,7 @@
     "openapi-typescript-codegen": "0.31.0",
     "prettier": "3.9.6",
     "release-it": "21.0.0",
+    "rollup": "4.62.5",
     "ts-node": "10.9.2",
     "typescript": "6.0.3",
     "uuid": "14.0.1",

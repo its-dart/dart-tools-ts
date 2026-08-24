@@ -6,7 +6,7 @@ export type TaskTimeTrackingCreate = {
   /**
    * The name or email of the user to attribute the tracked time to or null to use the current user.
    */
-  user: string | null;
+  user?: string | null;
   /**
    * The start timestamp for the tracked time entry in ISO 8601 format.
    */
