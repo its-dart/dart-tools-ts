@@ -4,5 +4,8 @@
 /* eslint-disable */
 import type { TaskCreate } from "./TaskCreate";
 export type WrappedTaskCreate = {
+  /**
+   * The new task's title and optional properties. Use workspace config for workspace-specific property values.
+   */
   item: TaskCreate;
 };

@@ -47,11 +47,20 @@ export class CommentService {
     task,
     text,
   }: {
+    /**
+     * The Dart ID of the task whose comments to list; required even when task is provided.
+     */
     taskId: string;
+    /**
+     * Case-insensitive substring of the comment author's name or email.
+     */
     author?: string;
+    /**
+     * The Dart user ID of the comment author; accepts an ID, not a name or email.
+     */
     authorId?: string;
     /**
-     * Filter by IDs
+     * Comma-separated Dart IDs to include. Each ID is a 12-character alphanumeric string.
      */
     ids?: string;
     /**
@@ -70,11 +79,29 @@ export class CommentService {
      * The initial index from which to return the results.
      */
     offset?: number;
+    /**
+     * The Dart ID of the parent comment whose replies to return. An empty string matches top-level comments.
+     */
     parentId?: string;
+    /**
+     * Exact comment publication time to match. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     publishedAt?: string;
+    /**
+     * Inclusive lower bound on comment publication time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     publishedAtAfter?: string;
+    /**
+     * Inclusive upper bound on comment publication time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     publishedAtBefore?: string;
+    /**
+     * Case-insensitive substring of the commented task's title.
+     */
     task?: string;
+    /**
+     * Case-insensitive substring of the stored rich-text content, including formatting metadata.
+     */
     text?: string;
   }): CancelablePromise<PaginatedCommentList> {
     return __request(OpenAPI, {

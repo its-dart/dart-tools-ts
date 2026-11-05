@@ -11,7 +11,7 @@ export class AttachmentService {
   /**
    * Attach a file from a provided URL to a task
    * Attach a file from a provided URL to a task. The file will be downloaded and attached asynchronously. This operation may take a few moments to complete.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns Attachment Success, including the attached attachment details
    * @throws ApiError

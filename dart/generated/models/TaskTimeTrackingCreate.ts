@@ -8,11 +8,11 @@ export type TaskTimeTrackingCreate = {
    */
   user?: string | null;
   /**
-   * The start timestamp for the tracked time entry in ISO 8601 format.
+   * The start timestamp for the tracked time entry. Use an ISO 8601 date and time with Z or a UTC offset, e.g. 2026-09-09T10:00:00Z or 2026-09-09T12:00:00+02:00. A date alone or a timestamp without a timezone is invalid.
    */
   startedAt: string;
   /**
-   * The end timestamp for the tracked time entry in ISO 8601 format. Must be after the start time.
+   * The end timestamp for the tracked time entry. Must be after the start time. Use an ISO 8601 date and time with Z or a UTC offset, e.g. 2026-09-09T10:00:00Z or 2026-09-09T12:00:00+02:00. A date alone or a timestamp without a timezone is invalid.
    */
   finishedAt: string;
   /**

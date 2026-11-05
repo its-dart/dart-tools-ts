@@ -31,7 +31,7 @@ export class TaskService {
   /**
    * Retrieve an existing task
    * Retrieve an existing task. This will return the task's information, including the title, dartboard, status, description and others.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedTask Success, including the retrieved task
    * @throws ApiError
    */
@@ -51,7 +51,7 @@ export class TaskService {
   /**
    * Update an existing task
    * Update properties of an existing task. For customProperties, use property NAME (not ID) as key. Get property names from workspace config. Example: {"customTextProperty": "Some text"}. Fields not provided are unchanged.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns WrappedTask Success, including the updated task
    * @throws ApiError
@@ -74,7 +74,7 @@ export class TaskService {
   /**
    * Delete an existing task
    * Move an existing task to the trash, where it can be recovered if needed. Nothing else about the task will be changed.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedTask Success, including the deleted task
    * @throws ApiError
    */
@@ -94,7 +94,7 @@ export class TaskService {
   /**
    * Move a task within its dartboard
    * Move a task to a specific position within results sorted by the order field. Use afterTaskId to place the task after a specific task, or beforeTaskId to place it before one.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns WrappedTask Success, including the updated task with its new ordering
    * @throws ApiError
@@ -116,7 +116,7 @@ export class TaskService {
   /**
    * Add a time tracking entry to a task
    * Record an additional time tracking entry on a task and return the updated task with refreshed time tracking.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns WrappedTask Success, including the updated task with refreshed time tracking
    * @throws ApiError
@@ -138,7 +138,7 @@ export class TaskService {
   /**
    * Update a task's description with text updates
    * Apply targeted text updates to a task's description; use instead of updateTask when only the description changes. Each update is one of: "replace" (swap oldText for newText), "insert_before" / "insert_after" (insert newText relative to anchorText), or "delete" (remove oldText), applied in order and atomically. When occurrence is omitted, the target text must be unique; otherwise specify occurrence (1-indexed). Preferred over a full update for long content: fewer tokens, and no risk of rewriting unrelated text.
-   * @param id
+   * @param id The task's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns WrappedTask Success, including the updated task
    * @throws ApiError
@@ -184,7 +184,7 @@ export class TaskService {
     inTrash,
     isCompleted,
     limit,
-    noDefaults = false,
+    noDefaults = true,
     o,
     offset,
     parentId,
@@ -210,34 +210,88 @@ export class TaskService {
     view,
     viewId,
   }: {
+    /**
+     * Case-insensitive substring of the assignee's name or email. An empty string matches items with no assignee.
+     */
     assignee?: string;
+    /**
+     * The Dart user ID of the assignee; accepts an ID, not a name or email. An empty string matches items with no assignee.
+     */
     assigneeId?: string;
+    /**
+     * Exact completion time to match. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     completedAt?: string;
+    /**
+     * Inclusive lower bound on completion time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     completedAtAfter?: string;
+    /**
+     * Inclusive upper bound on completion time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     completedAtBefore?: string;
+    /**
+     * Exact creation time to match. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     createdAt?: string;
+    /**
+     * Inclusive lower bound on creation time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     createdAtAfter?: string;
+    /**
+     * Inclusive upper bound on creation time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     createdAtBefore?: string;
+    /**
+     * Case-insensitive substring of the creator's name or email.
+     */
     createdBy?: string;
+    /**
+     * The Dart user ID of the creator; accepts an ID, not a name or email. An empty string matches items with no creator.
+     */
     createdById?: string;
+    /**
+     * Dartboard title or full Space/Dartboard title, matched exactly ignoring case. Use the configuration response for available values.
+     */
     dartboard?: string;
+    /**
+     * The Dart ID of the dartboard to filter by; accepts an ID, not a title.
+     */
     dartboardId?: string;
+    /**
+     * Case-insensitive substring of the stored task description, including rich-text formatting metadata.
+     */
     description?: string;
+    /**
+     * Exact due calendar date to match. Use YYYY-MM-DD, e.g. 2026-09-09. If a timestamp includes Z or an offset, its date is taken in America/Los_Angeles and may differ.
+     */
     dueAt?: string;
+    /**
+     * Inclusive lower bound on due calendar date. Use YYYY-MM-DD, e.g. 2026-09-09. If a timestamp includes Z or an offset, its date is taken in America/Los_Angeles and may differ.
+     */
     dueAtAfter?: string;
+    /**
+     * Inclusive upper bound on due calendar date. Use YYYY-MM-DD, e.g. 2026-09-09. If a timestamp includes Z or an offset, its date is taken in America/Los_Angeles and may differ.
+     */
     dueAtBefore?: string;
     /**
-     * Filter by IDs
+     * Comma-separated Dart IDs to include. Each ID is a 12-character alphanumeric string.
      */
     ids?: string;
+    /**
+     * Whether to return trashed items instead of non-trashed items. Defaults to false, even with no_defaults=true.
+     */
     inTrash?: boolean;
+    /**
+     * Whether to return tasks with a completed status; false returns tasks without one.
+     */
     isCompleted?: boolean;
     /**
      * Number of results to return per page.
      */
     limit?: number;
     /**
-     * Whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
+     * Whether to skip workspace-specific default filters. Defaults to true. Default ordering and the exclusion of trashed items still apply; use o and in_trash to override them.
      */
     noDefaults?: boolean;
     /**
@@ -274,27 +328,93 @@ export class TaskService {
      * The initial index from which to return the results.
      */
     offset?: number;
+    /**
+     * The Dart ID of the parent task whose direct subtasks to return. An empty string matches tasks with no parent.
+     */
     parentId?: string;
+    /**
+     * Case-insensitive substring of a priority (Critical, High, Medium, or Low). An empty string matches tasks with no priority.
+     */
     priority?: string;
+    /**
+     * Case-insensitive substring of the reviewer's name or email. An empty string matches items with no reviewer.
+     */
     reviewer?: string;
+    /**
+     * The Dart user ID of the reviewer; accepts an ID, not a name or email. An empty string matches items with no reviewer.
+     */
     reviewerId?: string;
+    /**
+     * Exact numeric task size, including the stored numeric value for T-shirt sizes.
+     */
     size?: number;
+    /**
+     * Exact start calendar date to match. Use YYYY-MM-DD, e.g. 2026-09-09. If a timestamp includes Z or an offset, its date is taken in America/Los_Angeles and may differ.
+     */
     startAt?: string;
+    /**
+     * Inclusive lower bound on start calendar date. Use YYYY-MM-DD, e.g. 2026-09-09. If a timestamp includes Z or an offset, its date is taken in America/Los_Angeles and may differ.
+     */
     startAtAfter?: string;
+    /**
+     * Inclusive upper bound on start calendar date. Use YYYY-MM-DD, e.g. 2026-09-09. If a timestamp includes Z or an offset, its date is taken in America/Los_Angeles and may differ.
+     */
     startAtBefore?: string;
+    /**
+     * Case-insensitive substring of the task status title. Use the configuration response for available statuses.
+     */
     status?: string;
+    /**
+     * The Dart ID of the task status to filter by; accepts an ID, not a title.
+     */
     statusId?: string;
+    /**
+     * Case-insensitive substring of a tag title. An empty string matches tasks with no tags.
+     */
     tag?: string;
+    /**
+     * The Dart ID of a tag. An empty string matches tasks with no tags.
+     */
     tagId?: string;
+    /**
+     * Case-insensitive substring of the title.
+     */
     title?: string;
+    /**
+     * Case-insensitive substring of the task type title. Use the configuration response for available types.
+     */
     type?: string;
+    /**
+     * The Dart ID of the task type to filter by; accepts an ID, not a title.
+     */
     typeId?: string;
+    /**
+     * Exact last update time to match. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     updatedAt?: string;
+    /**
+     * Inclusive lower bound on last update time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     updatedAtAfter?: string;
+    /**
+     * Inclusive upper bound on last update time. Use an ISO 8601 timestamp, preferably with Z or a UTC offset, e.g. 2026-09-09T12:00:00Z.
+     */
     updatedAtBefore?: string;
+    /**
+     * Case-insensitive substring of the last updater's name or email.
+     */
     updatedBy?: string;
+    /**
+     * The Dart user ID of the last updater; accepts an ID, not a name or email. An empty string matches items with no last updater.
+     */
     updatedById?: string;
+    /**
+     * Case-insensitive substring of a view title. Uses the first matching view; use the view ID filter for an unambiguous selection.
+     */
     view?: string;
+    /**
+     * The Dart ID of the view whose tasks to return; accepts an ID, not a title.
+     */
     viewId?: string;
   }): CancelablePromise<PaginatedConciseTaskList> {
     return __request(OpenAPI, {

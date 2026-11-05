@@ -20,10 +20,7 @@
 
 ## Deploy
 
-1. Merge all PRs with the changes to release
-2. Run `bun run release` and follow the prompts. This builds, bumps the version, commits, tags, pushes, and opens a GitHub release draft
-3. Publish the GitHub release
-4. GitHub Actions publishes to npm automatically on the tag push
+Run [the Create a release GitHub action](https://github.com/its-dart/dart-tools-ts/actions/workflows/create_release.yml) on `main` and choose `major`, `minor`, or `patch`. The action bumps and commits the version, pushes the tag, and creates a GitHub release. The tag triggers the build, tests, and npm publish.
 
 ## Dependency updating
 

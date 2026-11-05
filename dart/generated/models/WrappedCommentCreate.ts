@@ -4,5 +4,8 @@
 /* eslint-disable */
 import type { CommentCreate } from "./CommentCreate";
 export type WrappedCommentCreate = {
+  /**
+   * The target task ID and comment text, with an optional parent comment ID for a reply.
+   */
   item: CommentCreate;
 };

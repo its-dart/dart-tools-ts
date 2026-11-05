@@ -37,23 +37,23 @@ export type Task = {
    */
   description: string;
   /**
-   * The names or emails of the users that the task is assigned to. Either this or assignee must be included, depending on whether the workspaces allows multiple assignees or not.
+   * Names or emails replacing all assignees for a workspace allowing multiple assignees. An empty array clears them.
    */
   assignees?: any[] | null;
   /**
-   * The name or email of the user that the task is assigned to. Either this or assignees must be included, depending on whether the workspaces allows multiple assignees or not.
+   * The assignee's name or email for a workspace using a single assignee. Null clears the assignee.
    */
   assignee?: string | null;
   /**
-   * The names or emails of the users that are reviewing the task. Either this or reviewer must be included, depending on whether the workspace allows multiple reviewers or not.
+   * Names or emails replacing all reviewers for a workspace allowing multiple reviewers. An empty array clears them.
    */
   reviewers?: any[] | null;
   /**
-   * The name or email of the user that is reviewing the task. Either this or reviewers must be included, depending on whether the workspace allows multiple reviewers or not.
+   * The reviewer's name or email for a workspace using a single reviewer. Null clears the reviewer.
    */
   reviewer?: string | null;
   /**
-   * Any tags that should be applied to the task, which can be used to filter and search for tasks. Tags are also known as labels or components and are strings that can be anything, but should be short and descriptive. This list can be empty.
+   * Tag titles replacing all task tags. An empty array clears them. Unknown titles create new tags; use / for nested tags.
    */
   tags?: Array<string>;
   /**
@@ -81,7 +81,7 @@ export type Task = {
    */
   attachments: Array<Attachment>;
   /**
-   * Custom properties as a dict mapping property NAME to value. Use exact property names from workspace config (e.g., {"customCheckboxProperty": true, "customTextProperty": "Some text"}). Property names are case-sensitive.
+   * Custom properties as a dict mapping the exact, case-sensitive name values from workspace config customProperties to values. These are generated keys, not display titles or IDs (e.g., {"customCheckboxProperty": true, "customTextProperty": "Some text"}).
    */
   customProperties?: any | null;
   /**

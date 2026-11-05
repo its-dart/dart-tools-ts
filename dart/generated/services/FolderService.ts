@@ -10,7 +10,7 @@ export class FolderService {
   /**
    * Retrieve an existing folder
    * Retrieve an existing folder. This will return the folder's information, including the title, description, all docs within it, and others.
-   * @param id
+   * @param id The folder's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedFolder Success, including the retrieved folder
    * @throws ApiError
    */

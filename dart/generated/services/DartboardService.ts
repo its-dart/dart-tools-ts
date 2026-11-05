@@ -10,7 +10,7 @@ export class DartboardService {
   /**
    * Retrieve an existing dartboard
    * Retrieve an existing dartboard. This will return the dartboard's information, including the title and description.
-   * @param id
+   * @param id The dartboard's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedDartboard Success, including the retrieved dartboard
    * @throws ApiError
    */

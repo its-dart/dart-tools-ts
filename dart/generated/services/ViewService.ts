@@ -10,7 +10,7 @@ export class ViewService {
   /**
    * Retrieve an existing view
    * Retrieve an existing view. This will return the view's information, including the title, description, and others.
-   * @param id
+   * @param id The view's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedView Success, including the retrieved view
    * @throws ApiError
    */

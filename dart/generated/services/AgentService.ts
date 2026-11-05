@@ -31,7 +31,7 @@ export class AgentService {
   /**
    * Retrieve an existing agent
    * Retrieve an existing agent by its ID, including its name and current description or instructions.
-   * @param id
+   * @param id The agent's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL. Use an internal agent ID returned by the agent listing.
    * @returns WrappedAgent Success, including the retrieved agent
    * @throws ApiError
    */
@@ -49,8 +49,8 @@ export class AgentService {
   }
   /**
    * Update an agent
-   * Update an agent's name and/or description. Only the fields provided will be changed. The agent is identified by its ID in the URL.
-   * @param id
+   * Update an existing agent. The agent ID and fields to change. Use the same ID as the path id; omitted top-level fields keep their current values.
+   * @param id The agent's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL. Use an internal agent ID returned by the agent listing.
    * @param requestBody
    * @returns WrappedAgent Success, including the updated agent
    * @throws ApiError
@@ -73,7 +73,7 @@ export class AgentService {
   /**
    * Delete an agent
    * Delete an agent by its ID.
-   * @param id
+   * @param id The agent's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL. Use an internal agent ID returned by the agent listing.
    * @returns WrappedAgent Success, including the deleted agent
    * @throws ApiError
    */

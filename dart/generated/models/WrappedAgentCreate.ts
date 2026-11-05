@@ -4,5 +4,8 @@
 /* eslint-disable */
 import type { AgentCreate } from "./AgentCreate";
 export type WrappedAgentCreate = {
+  /**
+   * The new agent's name and optional instructions and execution settings.
+   */
   item: AgentCreate;
 };

@@ -32,7 +32,7 @@ export class DocService {
   /**
    * Retrieve an existing doc
    * Retrieve an existing doc. This will return the doc's information, including the title, folder, text and others.
-   * @param id
+   * @param id The doc's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedDoc Success, including the retrieved doc
    * @throws ApiError
    */
@@ -52,7 +52,7 @@ export class DocService {
   /**
    * Update an existing doc
    * Update certain properties of an existing doc. This will save the doc in Dart for later access, search, etc. Any properties that are not specified will not be changed.
-   * @param id
+   * @param id The doc's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns WrappedDoc Success, including the updated doc
    * @throws ApiError
@@ -75,7 +75,7 @@ export class DocService {
   /**
    * Delete an existing doc
    * Move an existing doc to the trash, where it can be recovered if needed. Nothing else about the doc will be changed.
-   * @param id
+   * @param id The doc's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @returns WrappedDoc Success, including the deleted doc
    * @throws ApiError
    */
@@ -95,7 +95,7 @@ export class DocService {
   /**
    * Update a doc's text content with text updates
    * Apply targeted text updates to a doc's content; use instead of updateDoc when only the text body changes. Each update is one of: "replace" (swap oldText for newText), "insert_before" / "insert_after" (insert newText relative to anchorText), or "delete" (remove oldText), applied in order and atomically. When occurrence is omitted, the target text must be unique; otherwise specify occurrence (1-indexed). Preferred over a full update for long content: fewer tokens, and no risk of rewriting unrelated text.
-   * @param id
+   * @param id The doc's 12-character alphanumeric Dart ID; accepts an ID, not a title or URL.
    * @param requestBody
    * @returns WrappedDoc Success, including the updated doc
    * @throws ApiError
@@ -127,27 +127,39 @@ export class DocService {
     ids,
     inTrash,
     limit,
-    noDefaults = false,
+    noDefaults = true,
     o,
     offset,
     s,
     text,
     title,
   }: {
+    /**
+     * Case-insensitive substring of the editor's name or email. An empty string matches items with no editor.
+     */
     editor?: string;
+    /**
+     * Case-insensitive substring of the folder title, optionally prefixed with Space/ to also match the space title.
+     */
     folder?: string;
+    /**
+     * The Dart ID of the folder to filter by; accepts an ID, not a title.
+     */
     folderId?: string;
     /**
-     * Filter by IDs
+     * Comma-separated Dart IDs to include. Each ID is a 12-character alphanumeric string.
      */
     ids?: string;
+    /**
+     * Whether to return trashed items instead of non-trashed items. Defaults to false, even with no_defaults=true.
+     */
     inTrash?: boolean;
     /**
      * Number of results to return per page.
      */
     limit?: number;
     /**
-     * Whether default filters and sorting are applied when false (default) or no defaults are applied when true. Explicit filters or sorting always override defaults.
+     * Whether to skip workspace-specific default filters. Defaults to true. Default ordering and the exclusion of trashed items still apply; use o and in_trash to override them.
      */
     noDefaults?: boolean;
     /**
@@ -184,7 +196,13 @@ export class DocService {
      * Search by title, text, or folder title
      */
     s?: string;
+    /**
+     * Case-insensitive substring of the stored rich-text content, including formatting metadata.
+     */
     text?: string;
+    /**
+     * Case-insensitive substring of the title.
+     */
     title?: string;
   }): CancelablePromise<PaginatedConciseDocList> {
     return __request(OpenAPI, {

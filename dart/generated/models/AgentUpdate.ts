@@ -25,7 +25,7 @@ export type AgentUpdate = {
    */
   instructions?: AgentInstructions;
   /**
-   * Forwarding-mode configuration.
+   * Forwarding-mode configuration. Include url to apply this configuration; other forwarding fields are ignored without it. Providing url replaces the configuration: omitted headers become empty, and omitted body and responseKey become empty strings.
    */
   forwarding?: AgentForwarding;
   /**
